@@ -80,8 +80,8 @@
 .cta-btn {
   position: relative;
   overflow: hidden;
-  background-color: #ffd700;
-  color: #1c1c16;
+  background-color: #e9c400;
+  color: #001e27;
   border-radius: 9999px;
   font-weight: 700;
   transition: background-color 0.35s ease, transform 0.2s ease;
@@ -99,12 +99,12 @@
     from var(--snake-pos),
     transparent 0deg,
     transparent 165deg,
-    rgba(255,215,0,0.04) 190deg,
-    rgba(255,215,0,0.12) 220deg,
-    rgba(255,215,0,0.30) 255deg,
-    rgba(255,215,0,0.65) 285deg,
-    rgba(255,240,120,0.9) 300deg,
-    rgba(255,215,0,0.30) 318deg,
+    rgba(233,196,0,0.04) 190deg,
+    rgba(233,196,0,0.12) 220deg,
+    rgba(233,196,0,0.30) 255deg,
+    rgba(233,196,0,0.65) 285deg,
+    rgba(255,230,100,0.9) 300deg,
+    rgba(233,196,0,0.30) 318deg,
     transparent 335deg,
     transparent 360deg
   );
@@ -127,14 +127,14 @@
     from var(--snake-pos),
     transparent 0deg,
     transparent 170deg,
-    rgba(255,215,0,0.06) 195deg,
-    rgba(255,215,0,0.18) 220deg,
-    rgba(255,215,0,0.45) 250deg,
-    rgba(255,215,0,0.85) 275deg,
-    rgba(255,215,0,1.0)  292deg,
-    rgba(255,255,210,1.0) 300deg,
-    rgba(255,215,0,0.7)  310deg,
-    rgba(255,215,0,0.2)  325deg,
+    rgba(233,196,0,0.06) 195deg,
+    rgba(233,196,0,0.18) 220deg,
+    rgba(233,196,0,0.45) 250deg,
+    rgba(233,196,0,0.85) 275deg,
+    rgba(233,196,0,1.0)  292deg,
+    rgba(255,236,100,1.0) 300deg,
+    rgba(233,196,0,0.7)  310deg,
+    rgba(233,196,0,0.2)  325deg,
     transparent 340deg,
     transparent 360deg
   );
@@ -146,9 +146,9 @@
 }
 
 .cta-btn:hover {
-  background-color: #87ceeb;
+  background-color: #f0d000;
   transform: scale(1.04);
-  box-shadow: 0 6px 32px rgba(135,206,235,0.45);
+  box-shadow: 0 6px 32px rgba(233,196,0,0.45);
 }
 
 .cta-btn:active {

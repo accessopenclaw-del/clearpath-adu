@@ -195,7 +195,7 @@ function NavBar() {
           boxShadow: scrolled ? "0 2px 24px rgba(0,0,0,0.07)" : "none",
         }}
       >
-        <div className="flex items-center px-6 md:px-10 py-3 max-w-7xl mx-auto">
+        <div className="flex items-center justify-between md:justify-start px-6 md:px-10 py-3 max-w-7xl mx-auto">
           {/* Logo */}
           <a href="#" className="cursor-pointer flex-shrink-0" style={{ width: "clamp(130px,18%,200px)" }}>
             <Image
@@ -366,7 +366,7 @@ function TrustBar() {
 
 function CustomerProblem() {
   return (
-    <section className="py-32 bg-surface">
+    <section className="py-16 md:py-32 bg-surface">
       <div className="container mx-auto px-8">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div>
@@ -404,7 +404,16 @@ function CustomerProblem() {
                 height={467}
                 className="rounded-xl shadow-2xl w-full"
               />
+              {/* Desktop: absolute overlap */}
               <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl max-w-xs hidden md:block border-l-4 border-[#e9c400]">
+                <p className="text-base font-semibold italic text-on-background font-headline leading-snug">
+                  &ldquo;The hardest part was knowing where to start. Clear Path fixed that.&rdquo;
+                </p>
+              </div>
+            </FadeUp>
+            {/* Mobile: below image in flow */}
+            <FadeUp>
+              <div className="mt-4 bg-white p-6 rounded-xl shadow-xl border-l-4 border-[#e9c400] md:hidden">
                 <p className="text-base font-semibold italic text-on-background font-headline leading-snug">
                   &ldquo;The hardest part was knowing where to start. Clear Path fixed that.&rdquo;
                 </p>
@@ -421,7 +430,7 @@ function CustomerProblem() {
 
 function InternalProblem() {
   return (
-    <section className="py-32 bg-white relative overflow-hidden">
+    <section className="py-16 md:py-32 bg-white relative overflow-hidden">
       {/* Ghost architectural house outline */}
       <div className="absolute right-0 inset-y-0 flex items-center pointer-events-none select-none opacity-[0.045]" aria-hidden="true">
         <svg width="440" height="360" viewBox="0 0 440 360" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -507,14 +516,14 @@ function GuideSection() {
       <div className="relative z-10 grid lg:grid-cols-2">
 
         {/* Left: full-height image */}
-        <FadeUp className="relative min-h-[520px] lg:min-h-[680px]">
+        <FadeUp className="relative h-[280px] md:h-auto md:min-h-[520px] lg:min-h-[680px]">
           <Image
             src="/images/guide-section.jpg"
             alt="Beautiful ADU interior"
             fill
             quality={100}
             sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover"
+            className="object-contain md:object-cover"
           />
           {/* Right-edge fade into section bg */}
           <div
@@ -529,13 +538,17 @@ function GuideSection() {
         </FadeUp>
 
         {/* Right: headline + cards */}
-        <div className="flex flex-col justify-center gap-12 px-10 py-20 lg:px-16 xl:px-20">
+        <div className="flex flex-col justify-center gap-12 px-10 py-10 md:py-20 lg:px-16 xl:px-20">
 
           <FadeUp>
-            <h2
-              className="font-headline font-bold text-white leading-tight"
-              style={{ fontSize: "clamp(2.2rem, 3.5vw, 3.25rem)" }}
-            >
+            {/* Mobile headline */}
+            <h2 className="font-headline font-bold text-white leading-tight text-4xl md:hidden">
+              Clear Path ADU
+              <br />
+              <span className="text-3xl" style={{ color: "#e9c400" }}>Is Here To Guide You</span>
+            </h2>
+            {/* Desktop headline */}
+            <h2 className="font-headline font-bold text-white leading-tight hidden md:block md:text-[clamp(2.2rem,3.5vw,3.25rem)]">
               Clear Path ADU Is Here
               <br />
               <span style={{ color: "#e9c400" }}>To Guide You</span>
@@ -548,8 +561,8 @@ function GuideSection() {
               <div
                 className="h-full flex flex-col gap-6 rounded-2xl p-8"
                 style={{
-                  backgroundColor: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(233,196,0,0.18)",
+                  backgroundColor: "#001e2e",
+                  border: "1px solid rgba(233,196,0,0.3)",
                 }}
               >
                 <div className="flex items-center gap-4 min-w-0">
@@ -580,8 +593,8 @@ function GuideSection() {
               <div
                 className="h-full flex flex-col gap-6 rounded-2xl p-8"
                 style={{
-                  backgroundColor: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(233,196,0,0.18)",
+                  backgroundColor: "#001e2e",
+                  border: "1px solid rgba(233,196,0,0.3)",
                 }}
               >
                 <div className="flex items-center gap-4 min-w-0">
@@ -651,7 +664,7 @@ function PreFeasibility() {
   ];
 
   return (
-    <section className="py-32 bg-white" id="pre-feasibility">
+    <section className="py-16 md:py-32 bg-white" id="pre-feasibility">
       <div className="max-w-6xl mx-auto px-8">
         {/* Premium offer card */}
         <div
@@ -706,7 +719,7 @@ function PreFeasibility() {
               <FadeUp className="relative z-10 flex flex-col justify-center h-full px-10 py-12 md:px-14 md:py-16">
                 {/* Eyebrow badge */}
                 <span
-                  className="inline-block text-xs font-bold uppercase tracking-[0.18em] px-4 py-2 rounded-full mb-8 w-fit"
+                  className="inline-block text-[10px] md:text-xs font-bold uppercase tracking-[0.08em] md:tracking-[0.18em] px-3 md:px-4 py-2 rounded-full mb-8 w-fit max-w-[calc(100%-5rem)] md:max-w-none"
                   style={{ backgroundColor: "rgba(233,196,0,0.15)", color: "#e9c400" }}
                 >
                   The ADU Pre-Feasibility Report
@@ -778,7 +791,7 @@ function PreFeasibility() {
                 <motion.button
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.97 }}
-                  className="w-full inline-flex items-center justify-center gap-3 px-10 py-5 rounded-xl font-bold text-[1rem] text-[#001e27] relative overflow-hidden"
+                  className="w-full inline-flex items-center justify-center gap-2 px-3 md:px-10 py-5 rounded-xl font-bold text-[11px] md:text-[1rem] text-[#001e27] relative overflow-hidden"
                   style={{
                     backgroundColor: "#e9c400",
                     boxShadow: "0 6px 32px rgba(233,196,0,0.35)",
@@ -983,9 +996,10 @@ function ProjectTimeline() {
             style={{
               left: "19px",
               top: 0,
-              bottom: 0,
+              bottom: "20px",
               width: "2px",
               background: "linear-gradient(to bottom, rgba(255,255,255,0.15), #e9c400)",
+              zIndex: 0,
             }}
             initial={{ scaleY: 0 }}
             animate={isInView ? { scaleY: 1 } : {}}
@@ -1003,11 +1017,11 @@ function ProjectTimeline() {
               >
                 {/* Dot */}
                 <div
-                  className="w-10 h-10 rounded-full flex-shrink-0"
+                  className="relative w-10 h-10 rounded-full flex-shrink-0"
                   style={{
                     backgroundColor: "#e9c400",
-                    boxShadow:
-                      "inset 0 0 0 3px #fff, 0 3px 16px rgba(233,196,0,0.65)",
+                    boxShadow: "inset 0 0 0 3px #fff, 0 3px 16px rgba(233,196,0,0.65)",
+                    zIndex: 10,
                   }}
                 />
                 {/* Content */}
@@ -1030,7 +1044,7 @@ function ProjectTimeline() {
 
 function Services() {
   return (
-    <section className="py-32 bg-surface" id="services">
+    <section className="py-16 md:py-32 bg-surface" id="services">
       <div className="container mx-auto px-8">
 
         {/* Header */}
@@ -1152,7 +1166,7 @@ function SuccessOutcome() {
       <div className="relative z-10 grid lg:grid-cols-2">
 
         {/* Left: headline + checklist */}
-        <div className="flex flex-col justify-center gap-14 px-10 py-20 lg:px-16 xl:px-20">
+        <div className="flex flex-col justify-center gap-14 px-10 py-10 md:py-20 lg:px-16 xl:px-20">
 
           <FadeUp>
             <h2
@@ -1238,7 +1252,7 @@ const risks = [
 
 function FailureStakes() {
   return (
-    <section className="py-32 bg-white">
+    <section className="py-16 md:py-32 bg-white">
       <div className="container mx-auto px-8">
         {/* Header */}
         <FadeUp className="mb-20">
@@ -1282,7 +1296,7 @@ function FailureStakes() {
         {/* Closing statement */}
         <FadeUp>
           <div
-            className="relative rounded-xl px-10 py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-6 overflow-hidden"
+            className="relative rounded-xl px-6 py-8 md:px-10 md:py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-6 overflow-hidden"
             style={{ backgroundColor: "#002b38" }}
           >
             {/* Floor plan geometry */}
@@ -1321,7 +1335,7 @@ function FailureStakes() {
                 Get expert guidance before you commit.
               </p>
             </div>
-            <CtaButton className="px-10 py-5 text-lg whitespace-nowrap flex-shrink-0">
+            <CtaButton className="px-6 py-4 text-sm md:px-10 md:py-5 md:text-lg whitespace-nowrap flex-shrink-0 w-full md:w-auto text-center">
               Check If My Property Qualifies
             </CtaButton>
           </div>
@@ -1358,7 +1372,7 @@ const whyCards = [
 
 function WhyClearPath() {
   return (
-    <section className="pt-32 pb-16 bg-surface">
+    <section className="pt-16 pb-8 md:pt-32 md:pb-16 bg-surface">
       <div className="container mx-auto px-8">
         {/* Header — two-column split */}
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
@@ -1383,18 +1397,22 @@ function WhyClearPath() {
 
           {/* Right: photo */}
           <FadeUp delay={0.15}>
-            <div className="relative">
-              <Image
-                src="/images/adu-kitchen.jpg"
-                alt="Modern ADU kitchen interior"
-                width={700}
-                height={500}
-                className="rounded-2xl w-full object-cover"
-                style={{ boxShadow: "0 8px 40px rgba(0,0,0,0.12)" }}
-              />
-              {/* Subtle gold border accent */}
+            <div className="relative -mx-8 md:mx-0">
               <div
-                className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl pointer-events-none"
+                className="relative w-full rounded-none md:rounded-2xl overflow-hidden h-[280px] md:h-auto"
+                style={{ boxShadow: "0 8px 40px rgba(0,0,0,0.12)" }}
+              >
+                <Image
+                  src="/images/adu-kitchen.jpg"
+                  alt="Modern ADU kitchen interior"
+                  width={700}
+                  height={500}
+                  className="w-full h-full object-contain md:object-cover object-center"
+                />
+              </div>
+              {/* Subtle gold border accent — desktop only */}
+              <div
+                className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl pointer-events-none hidden md:block"
                 style={{ border: "1px solid rgba(233,196,0,0.25)", zIndex: -1 }}
                 aria-hidden="true"
               />
@@ -1497,7 +1515,7 @@ function FAQ() {
 
 function FinalCTA() {
   return (
-    <section className="py-32 text-white relative overflow-hidden" style={{ backgroundColor: "#002b38" }}>
+    <section className="pt-16 pb-10 md:py-32 text-white relative overflow-hidden" style={{ backgroundColor: "#002b38" }}>
       {/* Abstract floor plan geometry */}
       <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
         <svg width="100%" height="100%" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1560,9 +1578,10 @@ function FinalCTA() {
               </CtaButton>
             </motion.div>
             <motion.button
-              whileHover={{ scale: 1.02, y: -2, backgroundColor: "rgba(255,255,255,0.08)" }}
+              whileHover={{ scale: 1.02, y: -2, borderColor: "#e9c400", color: "#e9c400" }}
               whileTap={{ scale: 0.97 }}
-              className="px-10 py-4 text-base font-semibold rounded-full border border-white/25 text-white/85 transition-colors"
+              className="hidden md:inline-flex px-10 py-4 text-base font-semibold rounded-full transition-colors"
+              style={{ backgroundColor: "#001e2e", color: "#ffffff", border: "1.5px solid rgba(255,255,255,0.35)" }}
             >
               Speak To An Expert
             </motion.button>
@@ -1578,7 +1597,7 @@ function FinalCTA() {
 
 function Footer() {
   return (
-    <footer className="bg-tertiary pt-24 pb-12">
+    <footer className="bg-tertiary pt-8 md:pt-24 pb-12">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-16 px-8 max-w-7xl mx-auto mb-20">
         {/* Brand */}
         <div className="md:col-span-1">

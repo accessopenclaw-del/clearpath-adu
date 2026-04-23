@@ -64,7 +64,10 @@ function HeroButton({
       <motion.button
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.97 }}
-        className="px-7 py-[14px] border border-white/30 text-white/85 font-semibold text-[15px] rounded-xl hover:bg-white/8 hover:border-white/50 transition-all duration-200"
+        className="px-7 py-[14px] font-semibold text-[15px] rounded-xl transition-all duration-200"
+        style={{ backgroundColor: "#002b38", color: "#ffffff", border: "1.5px solid rgba(255,255,255,0.35)" }}
+        onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "#e9c400"; (e.currentTarget as HTMLElement).style.color = "#e9c400"; }}
+        onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.35)"; (e.currentTarget as HTMLElement).style.color = "#ffffff"; }}
       >
         {children}
       </motion.button>
@@ -172,16 +175,6 @@ export function PremiumHero({
 
             {/* Headline */}
             <AnimatedHeadline text={title} />
-
-            {/* Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="text-sm font-semibold text-[#e9c400]/80 mb-4 tracking-widest uppercase"
-            >
-              {subtitle}
-            </motion.p>
 
             {/* Description */}
             <motion.p

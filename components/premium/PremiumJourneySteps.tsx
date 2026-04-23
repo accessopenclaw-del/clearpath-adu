@@ -201,7 +201,7 @@ export function PremiumJourneySteps() {
   const isInView = useInView(ref, { once: true, margin: "-12% 0px" });
 
   return (
-    <section id="process" className="py-32 bg-surface scroll-mt-20">
+    <section id="process" className="py-16 md:py-32 bg-surface scroll-mt-20">
       <div ref={ref} className="container mx-auto px-8">
 
         {/* Header */}

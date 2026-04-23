@@ -20,7 +20,7 @@ export function PremiumStepCards({ steps, title, subtitle }: PremiumStepCardsPro
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-24 bg-[#fdf9f0] relative overflow-hidden">
+    <section className="py-12 md:py-24 bg-[#fdf9f0] relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#e9c400]/5 rounded-full blur-3xl" />

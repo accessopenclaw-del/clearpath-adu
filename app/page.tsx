@@ -1330,7 +1330,7 @@ function FailureStakes() {
                 className="font-headline text-xl md:text-2xl font-bold leading-snug"
                 style={{ color: "#fdf9f0" }}
               >
-                Don&apos;t leave your property&apos;s value to chance.
+                Don&apos;t leave your property&apos;s value to chance.{" "}
                 <br className="hidden md:block" />
                 Get expert guidance before you commit.
               </p>

@@ -197,7 +197,7 @@ function NavBar() {
       >
         <div className="flex items-center justify-between md:justify-start px-6 md:px-10 py-3 max-w-7xl mx-auto">
           {/* Logo */}
-          <a href="#" className="cursor-pointer flex-shrink-0" style={{ width: "clamp(130px,18%,200px)" }}>
+          <a href="#" className="cursor-pointer flex-shrink-0 w-[160px] md:w-[clamp(130px,18%,200px)]">
             <Image
               src="/images/logo.png"
               alt="Clear Path ADU"
@@ -324,7 +324,7 @@ function TrustBar() {
           </span>
         </motion.div>
 
-        <div className="hidden sm:block w-px h-5" style={{ backgroundColor: "rgba(233,196,0,0.35)" }} />
+        <span className="hidden sm:block text-[10px]" style={{ color: "rgba(233,196,0,0.5)" }}>★</span>
 
         <motion.div
           variants={fadeUp}
@@ -341,7 +341,7 @@ function TrustBar() {
           </span>
         </motion.div>
 
-        <div className="hidden sm:block w-px h-5" style={{ backgroundColor: "rgba(233,196,0,0.35)" }} />
+        <span className="hidden sm:block text-[10px]" style={{ color: "rgba(233,196,0,0.5)" }}>★</span>
 
         <motion.div
           variants={fadeUp}
@@ -471,10 +471,13 @@ function InternalProblem() {
               You Shouldn&apos;t Navigate{" "}
               <span style={{ color: "#e9c400" }}>This Alone</span>
             </h2>
-            <p className="text-xl text-on-surface-variant leading-relaxed max-w-2xl">
+            <p className="text-xl text-on-surface-variant leading-relaxed max-w-2xl mb-8">
               Your property is too valuable to risk on the wrong team. You deserve a partner who
               treats it like their own.
             </p>
+            <CtaButton className="px-3 py-4 text-[11px] md:px-10 md:text-base font-bold">
+              Check If My Property Qualifies
+            </CtaButton>
           </div>
         </FadeUp>
       </div>
@@ -541,6 +544,15 @@ function GuideSection() {
         <div className="flex flex-col justify-center gap-12 px-10 py-10 md:py-20 lg:px-16 xl:px-20">
 
           <FadeUp>
+            {/* Eyebrow with star accent */}
+            <div className="flex items-center gap-2.5 mb-5">
+              <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
+                <path d="M8 0 L9.2 6.2 L15.5 5 L10.8 9.5 L13.5 15.5 L8 12 L2.5 15.5 L5.2 9.5 L0.5 5 L6.8 6.2 Z" fill="#e9c400" opacity="0.85" />
+              </svg>
+              <p className="text-[11px] font-bold uppercase tracking-[0.22em]" style={{ color: "rgba(233,196,0,0.75)" }}>
+                Your Trusted Guide
+              </p>
+            </div>
             {/* Mobile headline */}
             <h2 className="font-headline font-bold text-white leading-tight text-4xl md:hidden">
               Clear Path ADU
@@ -633,6 +645,152 @@ function ThreeStepPlan() {
   return <PremiumJourneySteps />;
 }
 
+// ─── Know Your Options ────────────────────────────────────────────────────────
+
+const aduOptions = [
+  {
+    icon: "house",
+    title: "Detached ADU",
+    body: "A fully independent unit built separately from your main home. Best for maximum rental income, privacy, and long-term property value.",
+    outcomeIcon: "payments",
+    outcome: "Maximum Rental Income",
+  },
+  {
+    icon: "link",
+    title: "Attached ADU",
+    body: "An addition connected to your existing home. Ideal for keeping family close while adding living space and equity.",
+    outcomeIcon: "family_restroom",
+    outcome: "Family Housing",
+  },
+  {
+    icon: "garage",
+    title: "Garage Conversion",
+    body: "Transform your existing garage into a livable unit. Often the fastest and most affordable path to rental income.",
+    outcomeIcon: "bolt",
+    outcome: "Fastest Path To Income",
+  },
+  {
+    icon: "home_work",
+    title: "Junior ADU (JADU)",
+    body: "A smaller unit within your main home up to 500 sqft. Perfect for multigenerational living or a starter rental.",
+    outcomeIcon: "people",
+    outcome: "Multigenerational Living",
+  },
+  {
+    icon: "content_cut",
+    title: "SB9 Lot Split",
+    body: "Legally divide your lot into two properties. The most advanced strategy for homeowners looking to maximize land value.",
+    outcomeIcon: "trending_up",
+    outcome: "Maximum Land Value",
+  },
+  {
+    icon: "holiday_village",
+    title: "Multiple ADUs",
+    body: "Many California properties can legally build both an ADU and a JADU together. The strategy most homeowners don't know about for maximum rental income.",
+    outcomeIcon: "star",
+    outcome: "Maximum ROI",
+  },
+];
+
+function KnowYourOptions() {
+  return (
+    <section className="pt-16 pb-12 md:pt-32 md:pb-12 bg-white">
+      <div className="container mx-auto px-8 max-w-6xl">
+
+        {/* Header */}
+        <FadeUp className="max-w-3xl mx-auto text-center mb-16">
+          <p className="text-[11px] font-bold uppercase tracking-[0.22em] mb-5" style={{ color: "#72787c" }}>
+            Know Your Options
+          </p>
+          <h2 className="font-headline text-4xl md:text-5xl font-bold leading-tight mb-6" style={{ color: "#002b38" }}>
+            Which ADU Is{" "}
+            <span style={{ color: "#e9c400" }}>Right For Your Property?</span>
+          </h2>
+          <p className="text-on-surface-variant text-lg leading-relaxed">
+            California law gives homeowners more options than most realize. Here&apos;s what might be possible on your lot.
+          </p>
+        </FadeUp>
+
+        {/* Cards grid */}
+        <StaggerFadeUp className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
+          {aduOptions.map(({ icon, title, body, outcomeIcon, outcome }, index) => (
+            <FadeUpItem key={title}>
+              <motion.div
+                className="rounded-2xl p-6 h-full flex flex-col relative overflow-hidden"
+                style={{
+                  backgroundColor: "#ffffff",
+                  border: "1px solid #e6e2d9",
+                  borderLeft: "3px solid #e9c400",
+                  boxShadow: "0 2px 12px rgba(0,0,0,0.04)",
+                }}
+                whileHover={{
+                  y: -4,
+                  boxShadow: "0 12px 36px rgba(233,196,0,0.15)",
+                  borderColor: "rgba(233,196,0,0.6)",
+                  transition: { duration: 0.22, ease: "easeOut" },
+                }}
+              >
+                {/* "Most Popular" badge — Detached ADU only */}
+                {title === "Detached ADU" && (
+                  <div className="absolute top-4 right-4">
+                    <span
+                      className="inline-flex items-center gap-1 text-[9px] font-black uppercase tracking-[0.18em] px-3 py-1.5 rounded-full"
+                      style={{
+                        backgroundColor: "#002b38",
+                        color: "#ffffff",
+                        border: "1.5px solid #e9c400",
+                        boxShadow: "0 2px 10px rgba(233,196,0,0.3)",
+                      }}
+                    >
+                      <span style={{ color: "#e9c400", fontSize: "8px" }}>★</span>
+                      Most Popular
+                    </span>
+                  </div>
+                )}
+
+                {/* Icon + Title inline */}
+                <div className="flex flex-row items-center gap-3 mb-3">
+                  <div
+                    className="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center"
+                    style={{ backgroundColor: "rgba(233,196,0,0.18)" }}
+                  >
+                    <Icon name={icon} style={{ color: "#e9c400", fontSize: "1.5rem" }} />
+                  </div>
+                  <h3 className="font-headline font-bold text-sm md:text-[1.05rem] leading-snug" style={{ color: "#002b38" }}>{title}</h3>
+                </div>
+
+                {/* Body */}
+                <p className="text-on-surface-variant text-sm leading-relaxed flex-1 mb-5">{body}</p>
+
+                {/* Outcome chip */}
+                <div className="flex items-center gap-2 pt-4 border-t" style={{ borderColor: "#e8deb8" }}>
+                  <Icon name={outcomeIcon} style={{ color: "#e9c400", fontSize: "1rem" }} />
+                  <span className="text-xs font-semibold" style={{ color: "#41484b" }}>{outcome}</span>
+                </div>
+              </motion.div>
+            </FadeUpItem>
+          ))}
+        </StaggerFadeUp>
+
+        {/* Closing transition line */}
+        <FadeUp>
+          <div className="max-w-2xl mx-auto text-center">
+            <div className="h-px mb-10 mx-auto w-16 rounded-full" style={{ backgroundColor: "#e9c400" }} />
+            <p className="font-headline text-xl md:text-2xl font-semibold leading-snug mb-8" style={{ color: "#002b38" }}>
+              Wondering which option fits your property?<br />
+              <span style={{ color: "#e9c400" }}>That&apos;s exactly what your Pre-Feasibility Report will tell you.</span>
+            </p>
+            <CtaButton className="px-10 py-4 text-base font-bold">
+              Check If My Property Qualifies
+            </CtaButton>
+          </div>
+        </FadeUp>
+
+      </div>
+    </section>
+  );
+}
+
 // ─── Pre-Feasibility Offer ────────────────────────────────────────────────────
 
 function PreFeasibility() {
@@ -664,7 +822,7 @@ function PreFeasibility() {
   ];
 
   return (
-    <section className="py-16 md:py-32 bg-white" id="pre-feasibility">
+    <section className="pt-12 pb-16 md:pt-12 md:pb-32 bg-white" id="pre-feasibility">
       <div className="max-w-6xl mx-auto px-8">
         {/* Premium offer card */}
         <div
@@ -788,26 +946,9 @@ function PreFeasibility() {
 
               {/* CTA — anchored to bottom of right column */}
               <FadeUp delay={0.3} className="mt-10 pt-8 border-t border-[#e6e2d9]">
-                <motion.button
-                  whileHover={{ scale: 1.02, y: -2 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="w-full inline-flex items-center justify-center gap-2 px-3 md:px-10 py-5 rounded-xl font-bold text-[11px] md:text-[1rem] text-[#001e27] relative overflow-hidden"
-                  style={{
-                    backgroundColor: "#e9c400",
-                    boxShadow: "0 6px 32px rgba(233,196,0,0.35)",
-                  }}
-                >
-                  {/* Shimmer */}
-                  <motion.span
-                    className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent skew-x-[-20deg] pointer-events-none"
-                    animate={{ translateX: ["-100%", "200%"] }}
-                    transition={{ duration: 2.6, repeat: Infinity, repeatDelay: 2.5, ease: "easeInOut" }}
-                  />
-                  <span className="relative z-10">Check If My Property Qualifies</span>
-                  <svg className="relative z-10 w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
-                </motion.button>
+                <CtaButton className="w-full px-3 md:px-10 py-5 text-[11px] md:text-[1rem]">
+                  Check If My Property Qualifies
+                </CtaButton>
               </FadeUp>
             </div>
 
@@ -1061,47 +1202,80 @@ function Services() {
         {/* Milestone roadmap */}
         <ProjectTimeline />
 
-        {/* Service cards */}
-        <StaggerFadeUp className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-24">
-          {services.map(({ icon, title, body }) => (
-            <FadeUpItem key={title}>
-              <motion.div
-                className="bg-white rounded-xl p-7 h-full flex flex-col gap-4"
-                style={{
-                  border: "1px solid #e6e2d9",
-                  borderLeft: "3px solid #e9c400",
-                  boxShadow: "0 2px 12px rgba(0,0,0,0.04)",
-                }}
-                whileHover={{
-                  y: -3,
-                  boxShadow: "0 10px 32px rgba(0,0,0,0.08)",
-                  transition: { duration: 0.2, ease: "easeOut" },
-                }}
-              >
-                <div className="flex items-center gap-3">
-                  <Icon name={icon} style={{ color: "#002b38", fontSize: "1.25rem" }} />
-                  <h3 className="font-headline font-bold text-[1.05rem] text-on-background leading-snug">{title}</h3>
+        {/* Service list — clean icon + title rows (mobile only) */}
+        <div className="md:hidden mb-24">
+          <StaggerFadeUp className="flex flex-col gap-5">
+            {services.map(({ icon, title, body }) => (
+              <FadeUpItem key={title}>
+                <div className="flex items-start gap-4 p-4 rounded-xl" style={{ backgroundColor: "#ffffff", border: "1px solid #e6e2d9", borderLeft: "3px solid #e9c400" }}>
+                  <div
+                    className="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center"
+                    style={{ backgroundColor: "rgba(233,196,0,0.12)" }}
+                  >
+                    <Icon name={icon} style={{ color: "#e9c400", fontSize: "1.2rem" }} />
+                  </div>
+                  <div>
+                    <h3 className="font-headline font-bold text-sm leading-snug mb-1" style={{ color: "#002b38" }}>{title}</h3>
+                    <p className="text-on-surface-variant text-sm leading-relaxed">{body}</p>
+                  </div>
                 </div>
-                <p className="text-on-surface-variant text-sm leading-relaxed">{body}</p>
-              </motion.div>
-            </FadeUpItem>
-          ))}
-        </StaggerFadeUp>
+              </FadeUpItem>
+            ))}
+          </StaggerFadeUp>
+        </div>
+
+        {/* Service cards grid — 3 columns (desktop only) */}
+        <div className="hidden md:block mb-24">
+          <StaggerFadeUp className="grid grid-cols-3 gap-5">
+            {services.map(({ icon, title, body }) => (
+              <FadeUpItem key={title}>
+                <motion.div
+                  className="rounded-2xl p-6 h-full flex flex-col relative overflow-hidden"
+                  style={{
+                    backgroundColor: "#ffffff",
+                    border: "1px solid #e6e2d9",
+                    borderLeft: "3px solid #e9c400",
+                    boxShadow: "0 2px 12px rgba(0,0,0,0.04)",
+                  }}
+                  whileHover={{
+                    y: -4,
+                    boxShadow: "0 12px 36px rgba(233,196,0,0.15)",
+                    borderColor: "rgba(233,196,0,0.6)",
+                    transition: { duration: 0.22, ease: "easeOut" },
+                  }}
+                >
+                  {/* Icon + Title inline */}
+                  <div className="flex flex-row items-center gap-3 mb-3">
+                    <div
+                      className="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center"
+                      style={{ backgroundColor: "rgba(233,196,0,0.12)" }}
+                    >
+                      <Icon name={icon} style={{ color: "#e9c400", fontSize: "1.5rem" }} />
+                    </div>
+                    <h3 className="font-headline font-bold text-[1.05rem] leading-snug" style={{ color: "#002b38" }}>{title}</h3>
+                  </div>
+                  {/* Body */}
+                  <p className="text-on-surface-variant text-sm leading-relaxed flex-1">{body}</p>
+                </motion.div>
+              </FadeUpItem>
+            ))}
+          </StaggerFadeUp>
+        </div>
 
         {/* Brand quote */}
-        <FadeUp className="max-w-3xl mx-auto text-center">
-          <div className="h-px mb-12 rounded-full" style={{ background: "linear-gradient(to right, transparent, #e6e2d9, transparent)" }} />
+        <FadeUp className="max-w-3xl mx-auto text-center py-2 md:py-0">
+          <GoldDivider />
           <p
-            className="font-headline font-semibold italic leading-relaxed text-on-background mb-6"
+            className="font-headline font-semibold italic leading-relaxed text-on-background my-3 md:my-12"
             style={{ fontSize: "clamp(1.5rem,3vw,2.25rem)" }}
           >
             &ldquo;Our process isn&apos;t just about building a unit; it&apos;s about engineering an
             asset that produces returns for decades.&rdquo;
           </p>
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-on-surface-variant mb-6">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-on-surface-variant mb-3 md:mb-6">
             — The Clear Path ADU Promise
           </p>
-          <div className="flex justify-center mb-12">
+          <div className="flex justify-center mb-3 md:mb-12">
             <Image
               src="/images/logo.png"
               alt="Clear Path ADU"
@@ -1110,7 +1284,7 @@ function Services() {
               style={{ width: "100px", height: "auto" }}
             />
           </div>
-          <div className="h-px rounded-full" style={{ background: "linear-gradient(to right, transparent, #e6e2d9, transparent)" }} />
+          <GoldDivider />
         </FadeUp>
 
       </div>
@@ -1267,8 +1441,13 @@ function FailureStakes() {
           </div>
           <h2 className="font-headline text-4xl md:text-5xl font-bold leading-tight" style={{ color: "#002b38" }}>
             The Cost Of Starting
-            <br />
-            <span style={{ color: "#e9c400" }}>Without A Clear Path</span>
+            <br className="hidden md:block" />
+            {" "}
+            <span style={{ color: "#e9c400" }}>
+              Without
+              <br className="block md:hidden" />
+              {" "}A Clear Path
+            </span>
           </h2>
         </FadeUp>
 
@@ -1276,19 +1455,38 @@ function FailureStakes() {
         <StaggerFadeUp className="grid md:grid-cols-3 gap-6 mb-16">
           {risks.map(({ num, title, body }) => (
             <FadeUpItem key={num}>
-              <div className="bg-surface rounded-2xl p-8 border border-[#e6e2d9]" style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.05)" }}>
-                <div className="flex items-center gap-3 mb-6">
+              <motion.div
+                className="rounded-xl p-7 h-full flex flex-col relative overflow-hidden"
+                style={{
+                  backgroundColor: "#fff8f0",
+                  border: "1px solid #fde8d0",
+                  borderLeft: "3px solid #f59e0b",
+                  boxShadow: "0 2px 16px rgba(245,158,11,0.08)",
+                }}
+                whileHover={{
+                  y: -4,
+                  boxShadow: "0 12px 36px rgba(245,158,11,0.18)",
+                  borderColor: "rgba(245,158,11,0.6)",
+                  transition: { duration: 0.22, ease: "easeOut" },
+                }}
+              >
+                {/* Icon + Title inline */}
+                <div className="flex flex-row items-center gap-3 mb-4">
                   <div
-                    className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: "rgba(233,196,0,0.12)" }}
+                    className="w-14 h-14 rounded-xl flex-shrink-0 flex items-center justify-center"
+                    style={{ backgroundColor: "rgba(245,158,11,0.12)" }}
                   >
-                    <Icon name="warning_amber" style={{ color: "#c9a800", fontSize: "1.1rem" }} />
+                    <Icon name="warning_amber" style={{ color: "#f59e0b", fontSize: "1.8rem" }} />
                   </div>
-                  <span className="font-headline text-sm font-bold text-on-surface-variant uppercase tracking-widest">{num}</span>
+                  <div>
+                    <h3 className="font-headline font-bold text-sm md:text-[1.05rem] leading-snug mb-1" style={{ color: "#002b38" }}>{title}</h3>
+                    <div className="h-[2px] w-8 rounded-full" style={{ backgroundColor: "#f59e0b" }} />
+                  </div>
                 </div>
-                <h3 className="font-headline text-xl font-bold mb-3 text-on-background">{title}</h3>
-                <p className="text-on-surface-variant leading-relaxed text-sm">{body}</p>
-              </div>
+
+                {/* Body */}
+                <p className="text-on-surface-variant text-sm leading-relaxed flex-1">{body}</p>
+              </motion.div>
             </FadeUpItem>
           ))}
         </StaggerFadeUp>
@@ -1420,49 +1618,58 @@ function WhyClearPath() {
           </FadeUp>
         </div>
 
-        {/* 2×2 grid */}
-        <StaggerFadeUp className="grid md:grid-cols-2 gap-5 mb-20">
+        {/* 2-column large feature blocks */}
+        <StaggerFadeUp className="grid md:grid-cols-2 gap-6 mb-20">
           {whyCards.map(({ icon, title, body }) => (
             <FadeUpItem key={title}>
               <motion.div
-                className="bg-white rounded-2xl p-8 flex gap-6 items-start border border-[#e6e2d9]"
-                style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.05)" }}
+                className="bg-white rounded-2xl p-5 h-full flex flex-col relative overflow-hidden"
+                style={{
+                  border: "1px solid #e6e2d9",
+                  boxShadow: "0 4px 24px rgba(0,0,0,0.06)",
+                }}
                 whileHover={{
-                  y: -3,
-                  boxShadow: "0 10px 32px rgba(0,0,0,0.09)",
+                  y: -4,
+                  boxShadow: "0 16px 48px rgba(0,0,0,0.1)",
                   borderColor: "rgba(233,196,0,0.4)",
                   transition: { duration: 0.25, ease: "easeOut" },
                 }}
               >
-                <div
-                  className="w-11 h-11 rounded-xl flex-shrink-0 flex items-center justify-center border border-[#e6e2d9]"
-                  style={{ backgroundColor: "#ffffff" }}
-                >
-                  <Icon name={icon} style={{ color: "#002b38", fontSize: "1.3rem" }} />
+                {/* Icon + Title inline */}
+                <div className="flex flex-row items-center gap-3 mb-2">
+                  <div
+                    className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0"
+                    style={{ backgroundColor: "#002b38" }}
+                  >
+                    <Icon name={icon} style={{ color: "#e9c400", fontSize: "1.9rem" }} />
+                  </div>
+                  <div>
+                    <h4 className="font-headline font-bold text-xl md:text-2xl leading-snug mb-1" style={{ color: "#002b38" }}>{title}</h4>
+                    <div className="h-[2px] w-10 rounded-full" style={{ backgroundColor: "#e9c400" }} />
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-lg font-bold mb-2 font-headline text-on-background">{title}</h4>
-                  <p className="text-on-surface-variant leading-relaxed text-sm">{body}</p>
-                </div>
+
+                {/* Body */}
+                <p className="text-on-surface-variant leading-relaxed flex-1">{body}</p>
               </motion.div>
             </FadeUpItem>
           ))}
         </StaggerFadeUp>
 
         {/* Mission quote */}
-        <FadeUp className="max-w-3xl mx-auto text-center">
+        <FadeUp className="max-w-3xl mx-auto text-center py-2 md:py-0">
           <GoldDivider />
           <p
-            className="font-headline font-semibold italic leading-relaxed text-on-background my-12"
+            className="font-headline font-semibold italic leading-relaxed text-on-background my-3 md:my-12"
             style={{ fontSize: "clamp(1.4rem,2.8vw,2.1rem)" }}
           >
             &ldquo;We don&apos;t just build ADUs; we build financial security. Our approach combines
             legal expertise, architectural beauty, and financial responsibility.&rdquo;
           </p>
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-on-surface-variant mb-6">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-on-surface-variant mb-3 md:mb-6">
             — The Clear Path ADU Promise
           </p>
-          <div className="flex justify-center mb-12">
+          <div className="flex justify-center mb-3 md:mb-12">
             <Image
               src="/images/logo.png"
               alt="Clear Path ADU"
@@ -1572,19 +1779,12 @@ function FinalCTA() {
 
         <FadeUp delay={0.25}>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <motion.div whileHover={{ scale: 1.02, y: -2 }} whileTap={{ scale: 0.97 }}>
-              <CtaButton className="px-10 py-4 text-base font-bold">
-                Check If My Property Qualifies
-              </CtaButton>
-            </motion.div>
-            <motion.button
-              whileHover={{ scale: 1.02, y: -2, borderColor: "#e9c400", color: "#e9c400" }}
-              whileTap={{ scale: 0.97 }}
-              className="hidden md:inline-flex px-10 py-4 text-base font-semibold rounded-full transition-colors"
-              style={{ backgroundColor: "#001e2e", color: "#ffffff", border: "1.5px solid rgba(255,255,255,0.35)" }}
-            >
+            <CtaButton className="px-10 py-4 text-base font-bold">
+              Check If My Property Qualifies
+            </CtaButton>
+            <CtaButton className="hidden md:inline-flex px-10 py-4 text-base font-semibold">
               Speak To An Expert
-            </motion.button>
+            </CtaButton>
           </div>
         </FadeUp>
 
@@ -1690,6 +1890,7 @@ export default function Home() {
       <InternalProblem />
       <GuideSection />
       <ThreeStepPlan />
+      <KnowYourOptions />
       <PreFeasibility />
       <Services />
       <SuccessOutcome />

@@ -54,44 +54,14 @@ function AnimatedHeadline({ text }: { text: string }) {
 
 function HeroButton({
   children,
-  variant = "primary",
 }: {
   children: React.ReactNode;
   variant?: "primary" | "secondary";
 }) {
-  if (variant === "secondary") {
-    return (
-      <motion.button
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.97 }}
-        className="px-7 py-[14px] font-semibold text-[15px] rounded-xl transition-all duration-200"
-        style={{ backgroundColor: "#002b38", color: "#ffffff", border: "1.5px solid rgba(255,255,255,0.35)" }}
-        onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "#e9c400"; (e.currentTarget as HTMLElement).style.color = "#e9c400"; }}
-        onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.35)"; (e.currentTarget as HTMLElement).style.color = "#ffffff"; }}
-      >
-        {children}
-      </motion.button>
-    );
-  }
   return (
-    <motion.button
-      whileHover={{ scale: 1.02, y: -1 }}
-      whileTap={{ scale: 0.97 }}
-      className="px-7 py-[14px] bg-[#e9c400] text-[#001e27] font-bold text-[15px] rounded-xl shadow-[0_4px_24px_rgba(233,196,0,0.3)] group relative overflow-hidden"
-    >
-      {/* Subtle shimmer */}
-      <motion.span
-        className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg] pointer-events-none"
-        animate={{ translateX: ["-100%", "200%"] }}
-        transition={{ duration: 2.4, repeat: Infinity, repeatDelay: 2, ease: "easeInOut" }}
-      />
-      <span className="relative z-10 flex items-center gap-2">
-        {children}
-        <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-        </svg>
-      </span>
-    </motion.button>
+    <button className="cta-btn px-7 py-[14px] text-[15px]">
+      {children}
+    </button>
   );
 }
 

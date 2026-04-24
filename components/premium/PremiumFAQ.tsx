@@ -293,16 +293,7 @@ export function PremiumFAQ({ faqs }: PremiumFAQProps) {
             </div>
             <a
               href="#pre-feasibility"
-              className="text-sm font-black whitespace-nowrap px-5 py-2.5 rounded-full transition-all"
-              style={{ backgroundColor: "#e9c400", color: "#002b38" }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor = "#ffe16d";
-                (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 20px rgba(233,196,0,0.4)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor = "#e9c400";
-                (e.currentTarget as HTMLElement).style.boxShadow = "none";
-              }}
+              className="cta-btn text-sm font-black whitespace-nowrap px-5 py-2.5"
             >
               Get Your Report
             </a>

@@ -45,7 +45,7 @@ const STEPS: JourneyStep[] = [
 
 function Connector({ isInView, delay }: { isInView: boolean; delay: number }) {
   return (
-    <div className="hidden md:flex items-start flex-shrink-0 w-16 pt-[5.5rem]">
+    <div className="hidden md:flex items-start flex-shrink-0 w-8 pt-[5.5rem]">
       <div className="flex items-center w-full">
         <motion.div
           className="flex-1 h-px origin-left"
@@ -95,7 +95,7 @@ function StepCard({
       transition={{ duration: 0.6, delay: 0.1 + index * 0.13, ease: "easeOut" }}
     >
       {/* "Start here" label — reserves space on all cards for alignment */}
-      <div className="h-8 flex items-center mb-4">
+      <div className="h-6 md:h-8 flex items-center mb-2 md:mb-4">
         {step.isStart && (
           <motion.div
             className="flex items-center gap-2"
@@ -119,7 +119,7 @@ function StepCard({
 
       {/* Card */}
       <motion.div
-        className="flex-1 flex flex-col bg-white rounded-2xl p-8 border"
+        className="flex-1 flex flex-col bg-white rounded-2xl p-4 md:p-6 border"
         style={{
           borderColor: "#e6e2d9",
           boxShadow: "0 2px 12px rgba(0,0,0,0.05)",
@@ -167,7 +167,7 @@ function StepCard({
         </h3>
 
         {/* Body */}
-        <p className="text-on-surface-variant leading-relaxed text-sm flex-1 mb-7">
+        <p className="text-on-surface-variant leading-relaxed text-sm flex-1 mb-4 md:mb-7">
           {step.body}
         </p>
 
@@ -206,7 +206,7 @@ export function PremiumJourneySteps() {
 
         {/* Header */}
         <motion.div
-          className="mb-20 max-w-2xl"
+          className="mb-10 md:mb-20 max-w-2xl"
           initial={{ opacity: 0, y: 18 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -236,7 +236,7 @@ export function PremiumJourneySteps() {
         </div>
 
         {/* Mobile: stacked */}
-        <div className="md:hidden flex flex-col gap-5">
+        <div className="md:hidden flex flex-col gap-4">
           {STEPS.map((step, i) => (
             <StepCard key={step.num} step={step} index={i} isInView={isInView} />
           ))}

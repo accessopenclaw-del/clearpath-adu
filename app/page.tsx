@@ -1545,140 +1545,31 @@ function FailureStakes() {
 
 // ─── Why Clear Path ADU ───────────────────────────────────────────────────────
 
-const whyCards = [
-  {
-    icon: "shield",
-    title: "Risk Reduction",
-    body: "We find potential issues and red flags before you spend a dime on construction.",
-  },
-  {
-    icon: "gavel",
-    title: "Expert Advocacy",
-    body: "We speak the language of city planners and building inspectors so you don't have to.",
-  },
-  {
-    icon: "trending_up",
-    title: "Value Maximization",
-    body: "Every design decision is focused on your property's long-term bottom line.",
-  },
-  {
-    icon: "visibility",
-    title: "Full Transparency",
-    body: "No hidden costs. No confusing jargon. Just a clear path to your finished ADU.",
-  },
+const trustItems = [
+  { icon: "shield", label: "Risk Reduction" },
+  { icon: "gavel", label: "Expert Advocacy" },
+  { icon: "trending_up", label: "Value Maximization" },
+  { icon: "visibility", label: "Full Transparency" },
 ];
 
-function WhyClearPath() {
+function TrustStrip() {
   return (
-    <section className="pt-16 pb-8 md:pt-32 md:pb-16 bg-surface">
+    <section className="py-8 md:py-10 bg-surface border-y" style={{ borderColor: "#e6e2d9" }}>
       <div className="container mx-auto px-8">
-        {/* Header — two-column split */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-          {/* Left: copy */}
-          <FadeUp className="flex flex-col">
-            <p className="text-[11px] font-bold uppercase tracking-[0.22em] mb-5" style={{ color: "#72787c" }}>
-              Why Homeowners Choose Us
-            </p>
-            <h2 className="font-headline text-4xl md:text-5xl font-bold leading-tight mb-8" style={{ color: "#002b38" }}>
-              Built on Trust.
-              <br />
-              Delivered{" "}
-              <span style={{ color: "#e9c400" }}>With Clarity.</span>
-            </h2>
-            <p className="text-on-surface-variant text-lg leading-relaxed mb-10 max-w-md">
-              Every homeowner deserves a partner who treats their property like their own — and their investment like it matters.
-            </p>
-            <div>
-              <CtaButton className="px-8 py-4 text-sm">Check If My Property Qualifies</CtaButton>
-            </div>
-          </FadeUp>
-
-          {/* Right: photo */}
-          <FadeUp delay={0.15}>
-            <div className="relative -mx-8 md:mx-0">
-              <div
-                className="relative w-full rounded-none md:rounded-2xl overflow-hidden h-[280px] md:h-auto"
-                style={{ boxShadow: "0 8px 40px rgba(0,0,0,0.12)" }}
-              >
-                <Image
-                  src="/images/adu-kitchen.jpg"
-                  alt="Modern ADU kitchen interior"
-                  width={700}
-                  height={500}
-                  className="w-full h-full object-contain md:object-cover object-center"
-                />
-              </div>
-              {/* Subtle gold border accent — desktop only */}
-              <div
-                className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl pointer-events-none hidden md:block"
-                style={{ border: "1px solid rgba(233,196,0,0.25)", zIndex: -1 }}
-                aria-hidden="true"
-              />
-            </div>
-          </FadeUp>
-        </div>
-
-        {/* 2-column large feature blocks */}
-        <StaggerFadeUp className="grid md:grid-cols-2 gap-6 mb-20">
-          {whyCards.map(({ icon, title, body }) => (
-            <FadeUpItem key={title}>
-              <motion.div
-                className="bg-white rounded-2xl p-5 h-full flex flex-col relative overflow-hidden"
-                style={{
-                  border: "1px solid #e6e2d9",
-                  boxShadow: "0 4px 24px rgba(0,0,0,0.06)",
-                }}
-                whileHover={{
-                  y: -4,
-                  boxShadow: "0 16px 48px rgba(0,0,0,0.1)",
-                  borderColor: "rgba(233,196,0,0.4)",
-                  transition: { duration: 0.25, ease: "easeOut" },
-                }}
-              >
-                {/* Icon + Title inline */}
-                <div className="flex flex-row items-center gap-3 mb-2">
-                  <div
-                    className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: "#002b38" }}
-                  >
-                    <Icon name={icon} style={{ color: "#e9c400", fontSize: "1.9rem" }} />
-                  </div>
-                  <div>
-                    <h4 className="font-headline font-bold text-xl md:text-2xl leading-snug mb-1" style={{ color: "#002b38" }}>{title}</h4>
-                    <div className="h-[2px] w-10 rounded-full" style={{ backgroundColor: "#e9c400" }} />
-                  </div>
+        <FadeUp>
+          <div className="flex flex-wrap justify-center gap-6 md:gap-12">
+            {trustItems.map(({ icon, label }) => (
+              <div key={label} className="flex items-center gap-2.5">
+                <div
+                  className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+                  style={{ backgroundColor: "rgba(233,196,0,0.12)" }}
+                >
+                  <Icon name={icon} style={{ color: "#e9c400", fontSize: "1.1rem" }} />
                 </div>
-
-                {/* Body */}
-                <p className="text-on-surface-variant leading-relaxed flex-1">{body}</p>
-              </motion.div>
-            </FadeUpItem>
-          ))}
-        </StaggerFadeUp>
-
-        {/* Mission quote */}
-        <FadeUp className="max-w-3xl mx-auto text-center py-2 md:py-0">
-          <GoldDivider />
-          <p
-            className="font-headline font-semibold italic leading-relaxed text-on-background my-3 md:my-12"
-            style={{ fontSize: "clamp(1.4rem,2.8vw,2.1rem)" }}
-          >
-            &ldquo;We don&apos;t just build ADUs; we build financial security. Our approach combines
-            legal expertise, architectural beauty, and financial responsibility.&rdquo;
-          </p>
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-on-surface-variant mb-3 md:mb-6">
-            — The Clear Path ADU Promise
-          </p>
-          <div className="flex justify-center mb-3 md:mb-12">
-            <Image
-              src="/images/logo.png"
-              alt="Clear Path ADU"
-              width={100}
-              height={30}
-              style={{ width: "100px", height: "auto" }}
-            />
+                <span className="font-headline font-semibold text-sm" style={{ color: "#002b38" }}>{label}</span>
+              </div>
+            ))}
           </div>
-          <GoldDivider />
         </FadeUp>
       </div>
     </section>
@@ -1892,10 +1783,10 @@ export default function Home() {
       <ThreeStepPlan />
       <KnowYourOptions />
       <PreFeasibility />
-      <Services />
       <SuccessOutcome />
       <FailureStakes />
-      <WhyClearPath />
+      <Services />
+      <TrustStrip />
       <FAQ />
       <FinalCTA />
       <Footer />

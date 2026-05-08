@@ -145,7 +145,7 @@ function useCounter(target: number, duration = 2000, enabled = false) {
 
 const NAV_LINKS = [
   ["Process", "#process"],
-  ["Pre-Feasibility", "#pre-feasibility"],
+  ["Pre-Feasibility", "/pre-feasibility"],
   ["FAQs", "#faq"],
   ["About", "#about"],
   ["Contact Us", "#contact"],
@@ -1823,7 +1823,7 @@ function Footer() {
           <div className="flex flex-col gap-4 text-secondary-fixed/70 font-medium">
             {[
               ["Process", "#process"],
-              ["Pre-Feasibility", "#pre-feasibility"],
+              ["Pre-Feasibility", "/pre-feasibility"],
               ["FAQs", "#faq"],
               ["About", "#about"],
               ["Contact Us", "#contact"],

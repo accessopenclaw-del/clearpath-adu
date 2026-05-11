@@ -182,7 +182,7 @@ export function PremiumFAQ({ faqs }: PremiumFAQProps) {
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <section className="pt-8 pb-16 md:pt-16 md:pb-32 bg-surface scroll-mt-20" id="faq">
+    <section className="pt-6 pb-10 md:pt-10 md:pb-16 bg-surface scroll-mt-20" id="faq">
       <div className="container mx-auto px-8 max-w-3xl">
         {/* ── Section header ── */}
         <motion.div

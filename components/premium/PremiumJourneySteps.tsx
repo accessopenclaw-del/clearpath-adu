@@ -27,7 +27,7 @@ const STEPS: JourneyStep[] = [
     num: "02",
     phase: "Strategy",
     title: "Build The Right Strategy",
-    body: "Design and financial modeling that aligns with your specific goals—whether it's rental income or family housing.",
+    body: "Build the right strategy with design direction, budget planning, and financial modeling that aligns with your goals — whether rental income, family housing, or long-term property value.",
     outcomeIcon: "draw",
     outcome: "Custom Design & Plan",
   },
@@ -201,12 +201,12 @@ export function PremiumJourneySteps() {
   const isInView = useInView(ref, { once: true, margin: "-12% 0px" });
 
   return (
-    <section id="process" className="py-16 md:py-32 bg-surface scroll-mt-20">
+    <section id="process" className="pt-6 pb-16 md:pt-8 md:pb-16 bg-surface scroll-mt-20">
       <div ref={ref} className="container mx-auto px-8">
 
         {/* Header */}
         <motion.div
-          className="mb-10 md:mb-20 max-w-2xl"
+          className="mb-6 md:mb-10 max-w-2xl"
           initial={{ opacity: 0, y: 18 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}

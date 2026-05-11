@@ -354,7 +354,7 @@ function TrustBar() {
             ${Math.floor(revenue)}M+
           </span>
           <span className="text-sm font-medium" style={{ color: "#ffffff" }}>
-            in ADU Projects Completed
+            In ADU Projects Completed
           </span>
         </motion.div>
       </div>
@@ -366,7 +366,7 @@ function TrustBar() {
 
 function CustomerProblem() {
   return (
-    <section className="py-16 md:py-32 bg-surface">
+    <section className="py-10 md:py-16 bg-surface">
       <div className="container mx-auto px-8">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div>
@@ -430,7 +430,7 @@ function CustomerProblem() {
 
 function InternalProblem() {
   return (
-    <section className="py-16 md:py-32 bg-white relative overflow-hidden">
+    <section className="py-10 md:py-16 bg-white relative overflow-hidden">
       {/* Ghost architectural house outline */}
       <div className="absolute right-0 inset-y-0 flex items-center pointer-events-none select-none opacity-[0.045]" aria-hidden="true">
         <svg width="440" height="360" viewBox="0 0 440 360" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -541,7 +541,7 @@ function GuideSection() {
         </FadeUp>
 
         {/* Right: headline + cards */}
-        <div className="flex flex-col justify-center gap-12 px-10 py-10 md:py-20 lg:px-16 xl:px-20">
+        <div className="flex flex-col justify-center gap-12 px-10 py-8 md:py-12 lg:px-16 xl:px-20">
 
           <FadeUp>
             {/* Eyebrow with star accent */}
@@ -694,7 +694,7 @@ const aduOptions = [
 
 function KnowYourOptions() {
   return (
-    <section className="pt-16 pb-12 md:pt-32 md:pb-12 bg-white">
+    <section className="pt-10 pb-8 md:pt-16 md:pb-10 bg-white">
       <div className="container mx-auto px-8 max-w-6xl">
 
         {/* Header */}
@@ -732,20 +732,22 @@ function KnowYourOptions() {
               >
                 {/* "Most Popular" badge — Detached ADU only */}
                 {title === "Detached ADU" && (
-                  <div className="absolute top-4 right-4">
-                    <span
-                      className="inline-flex items-center gap-1 text-[9px] font-black uppercase tracking-[0.18em] px-3 py-1.5 rounded-full"
-                      style={{
-                        backgroundColor: "#002b38",
-                        color: "#ffffff",
-                        border: "1.5px solid #e9c400",
-                        boxShadow: "0 2px 10px rgba(233,196,0,0.3)",
-                      }}
-                    >
-                      <span style={{ color: "#e9c400", fontSize: "8px" }}>★</span>
-                      Most Popular
-                    </span>
-                  </div>
+                  <span style={{
+                    position: 'absolute',
+                    top: '18px',
+                    right: '18px',
+                    background: '#e9c400',
+                    color: '#002b38',
+                    border: '1px solid rgba(0, 43, 56, 0.2)',
+                    borderRadius: '999px',
+                    padding: '6px 12px',
+                    fontSize: '10px',
+                    fontWeight: 700,
+                    letterSpacing: '0.08em',
+                    whiteSpace: 'nowrap'
+                  }}>
+                    ★ Most Popular
+                  </span>
                 )}
 
                 {/* Icon + Title inline */}
@@ -796,33 +798,41 @@ function KnowYourOptions() {
 function PreFeasibility() {
   const checkItems = [
     {
-      label: "ADU Eligibility",
-      detail: "Can you legally build on this lot based on your zoning?",
+      label: "ADU Proposal & Cost Breakdown",
+      detail: "ADU type, size, layout, and preliminary project cost range.",
     },
     {
-      label: "Maximum ADU Size",
-      detail: "The exact square footage your city legally allows you to build",
+      label: "Zoning & Property Review",
+      detail: "Key zoning rules, setbacks, parking requirements, and local ADU constraints for your lot.",
     },
     {
-      label: "Optimal Placement",
-      detail: "The best yard location to maximize space and avoid restrictions",
+      label: "Maximum Buildable Size",
+      detail: "The ADU square footage your property may legally support under current local rules.",
     },
     {
-      label: "Parking Requirements",
-      detail: "The parking rules your city requires for ADU approval",
+      label: "Preliminary Site Map",
+      detail: "A visual concept showing where an ADU may fit and what areas need further review.",
     },
     {
-      label: "Multiple ADU Potential",
-      detail: "Whether you can build both an ADU and JADU on your lot",
+      label: "Estimated Timeline",
+      detail: "From planning and permits through construction and final inspection.",
     },
     {
-      label: "Utility & Trenching Access",
-      detail: "Your utility connection points and any potential red flags",
+      label: "Utility & Trenching Red Flags",
+      detail: "Water, sewer, electrical, and trenching considerations affecting cost or feasibility.",
+    },
+    {
+      label: "Income & ROI Direction",
+      detail: "Potential rental income, property value impact, and whether the project is worth pursuing.",
+    },
+    {
+      label: "Next-Step Roadmap",
+      detail: "A clear recommendation on what to do next if your property is a good fit.",
     },
   ];
 
   return (
-    <section className="pt-12 pb-16 md:pt-12 md:pb-32 bg-white" id="pre-feasibility">
+    <section className="pt-10 pb-10 md:pt-12 md:pb-16 bg-white" id="pre-feasibility">
       <div className="max-w-6xl mx-auto px-8">
         {/* Premium offer card */}
         <div
@@ -874,40 +884,51 @@ function PreFeasibility() {
                 aria-hidden="true"
               />
 
-              <FadeUp className="relative z-10 flex flex-col justify-center h-full px-10 py-12 md:px-14 md:py-16">
-                {/* Eyebrow badge */}
-                <span
-                  className="inline-block text-[10px] md:text-xs font-bold uppercase tracking-[0.08em] md:tracking-[0.18em] px-3 md:px-4 py-2 rounded-full mb-8 w-fit max-w-[calc(100%-5rem)] md:max-w-none"
-                  style={{ backgroundColor: "rgba(233,196,0,0.15)", color: "#e9c400" }}
-                >
-                  The ADU Pre-Feasibility Report
-                </span>
+              <FadeUp className="relative z-10 flex flex-col justify-between h-full px-10 py-12 md:px-14 md:py-16">
+                {/* Text content group */}
+                <div className="flex flex-col">
+                  {/* Eyebrow badge */}
+                  <span
+                    className="inline-block text-[10px] md:text-xs font-bold uppercase tracking-[0.08em] md:tracking-[0.18em] px-3 md:px-4 py-2 rounded-full mb-8 w-fit max-w-[calc(100%-5rem)] md:max-w-none"
+                    style={{ backgroundColor: "rgba(233,196,0,0.15)", color: "#e9c400" }}
+                  >
+                    The ADU Pre-Feasibility Report
+                  </span>
 
-                {/* Headline */}
-                <h2 className="font-headline text-3xl md:text-4xl xl:text-5xl font-bold mb-5 text-white leading-tight">
-                  Stop Guessing.{" "}
-                  <span style={{ color: "#e9c400" }}>Start Building</span>
-                  {" "}With Confidence.
-                </h2>
+                  {/* Headline */}
+                  <h2 className="font-headline text-3xl md:text-4xl xl:text-5xl font-bold mb-5 text-white leading-tight">
+                    Stop Guessing.{" "}
+                    <span style={{ color: "#e9c400" }}>Start Building</span>
+                    {" "}With Confidence.
+                  </h2>
 
-                {/* Subheadline */}
-                <h3 className="text-lg font-medium text-white/60 mb-10 leading-relaxed">
-                  Know Exactly What You Can Build Before Spending on Plans
-                </h3>
+                  {/* Subheadline */}
+                  <h3 className="text-lg font-medium text-white/60 mb-10 leading-relaxed">
+                    Know What You Can Build, What It May Cost, And The Best Path Forward
+                  </h3>
 
-                {/* Gold rule accent */}
-                <div className="w-12 h-[3px] rounded-full mb-10" style={{ backgroundColor: "#e9c400" }} />
+                  {/* Gold rule accent */}
+                  <div className="w-12 h-[3px] rounded-full mb-10" style={{ backgroundColor: "#e9c400" }} />
 
-                {/* Why It Matters quote */}
-                <div className="border-l-2 border-[#e9c400]/40 pl-5">
-                  <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-3">
-                    Why It Matters
-                  </h4>
-                  <p className="text-white/55 text-sm leading-relaxed">
-                    &ldquo;Most homeowners waste $10,000+ on architect plans the city rejects or
-                    delays. This report gives you the rules of the game before you play — so every
-                    dollar you spend moves you forward.&rdquo;
-                  </p>
+                  {/* Why It Matters quote */}
+                  <div className="border-l-2 border-[#e9c400]/40 pl-5">
+                    <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-3">
+                      Why It Matters
+                    </h4>
+                    <p className="text-white/55 text-sm leading-relaxed">
+                      &ldquo;Most homeowners start with ideas, rough quotes, or architect plans before they know what their property can actually support. Your Pre-Feasibility Report gives you a property-specific ADU roadmap &mdash; including zoning details, placement, budget direction, timeline, and next steps &mdash; so every dollar you spend moves you forward.&rdquo;
+                    </p>
+                  </div>
+                </div>
+
+                {/* Button — pinned to bottom of left column */}
+                <div className="mt-6 pt-8 border-t border-[#e9c400]/20">
+                  <a
+                    href="#"
+                    className="cta-btn w-full px-3 md:px-10 py-5 text-[11px] md:text-[1rem] text-center block"
+                  >
+                    Download A Sample Report
+                  </a>
                 </div>
               </FadeUp>
             </div>
@@ -921,7 +942,7 @@ function PreFeasibility() {
               <div className="flex-1">
                 <FadeUp>
                   <h4 className="text-lg font-bold mb-8 text-on-background">
-                    What You&apos;ll Discover
+                    What Your Report Includes
                   </h4>
                 </FadeUp>
                 <StaggerFadeUp>
@@ -944,8 +965,15 @@ function PreFeasibility() {
                 </StaggerFadeUp>
               </div>
 
-              {/* CTA — anchored to bottom of right column */}
-              <FadeUp delay={0.3} className="mt-10 pt-8 border-t border-[#e6e2d9]">
+              {/* Framing note */}
+              <FadeUp delay={0.2}>
+                <p className="mt-8 text-sm text-on-surface-variant leading-relaxed">
+                  This is designed to help you understand the opportunity before committing to full design, permits, financing, or construction.
+                </p>
+              </FadeUp>
+
+              {/* CTA */}
+              <FadeUp delay={0.3} className="mt-6 pt-8 border-t border-[#e6e2d9]">
                 <CtaButton className="w-full px-3 md:px-10 py-5 text-[11px] md:text-[1rem]">
                   Check If My Property Qualifies
                 </CtaButton>
@@ -965,48 +993,42 @@ const services = [
   {
     icon: "analytics",
     title: "Pre-Feasibility",
-    body: "Technical deep-dive into your site's physical and legal constraints.",
+    body: "Understand your property's legal, zoning, utility, and site limits before spending on design.",
   },
   {
     icon: "account_balance_wallet",
     title: "Goal Review",
-    body: "Alignment of ADU size and features with your long-term wealth strategy.",
+    body: "Match your ADU size, layout, and use case with your long-term income and property goals.",
+  },
+  {
+    icon: "account_balance",
+    title: "Budget & Financing Path",
+    body: "Review project costs, soft costs, and funding options before moving into design or permits.",
   },
   {
     icon: "draw",
     title: "Architecture & Planning",
-    body: "Designs that maximize livability and property value.",
+    body: "Create ADU plans that improve livability, rental potential, and long-term property value.",
   },
   {
     icon: "description",
     title: "Permit & Approvals",
-    body: "Managing the heavy lifting of bureaucratic city submittals.",
+    body: "We help manage city submittals, corrections, and approval steps so the process stays on track.",
   },
   {
     icon: "engineering",
     title: "Construction Management",
-    body: "Qualified oversight to ensure build quality and schedule adherence.",
-  },
-  {
-    icon: "trending_up",
-    title: "ROI Maximization",
-    body: "Strategic finishes and features that command top rental rates.",
+    body: "Oversee the build, contractors, schedule, and quality so your ADU is completed correctly.",
   },
 ];
 
 const milestones = [
-  { label: "Pre-Feasibility", duration: "1–2 weeks",   icon: "search" },
-  { label: "Design & Planning", duration: "3–4 weeks",  icon: "draw" },
-  { label: "Permits & Approvals", duration: "60–90 days", icon: "description" },
-  { label: "Construction", duration: "4–6 months",     icon: "construction" },
+  { label: "Pre-Feasibility",   duration: "1–2 weeks",   icon: "search",       description: "Confirm what your property can support before spending on design or permits." },
+  { label: "Design & Planning", duration: "4–6 weeks",   icon: "draw",         description: "Create the ADU layout, scope, budget direction, and permit-ready plan." },
+  { label: "Permits & Approvals", duration: "8–12 weeks", icon: "description", description: "Manage city submittals, corrections, and approval steps." },
+  { label: "Construction",      duration: "4–6 months",  icon: "construction", description: "Build, inspect, and complete the ADU for final use." },
 ];
 
-// Each column layout (desktop):
-//   [icon badge + phase name]  — fixed 148px (LABEL_H) container, bottom-aligned
-//   [dot]                      — w-10 h-10 = 40px, center at LABEL_H + 20px = 168px
-//   [duration]
-// Gradient line top = LABEL_H + half-dot = 148 + 20 = 168px
-const LABEL_H = 148; // px
 
 function ProjectTimeline() {
   const ref = useRef<HTMLDivElement>(null);
@@ -1045,7 +1067,7 @@ function ProjectTimeline() {
 
         {/* Headline block */}
         <motion.div
-          className="text-center mb-8"
+          className="text-center"
           initial={{ opacity: 0, y: 12 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
@@ -1060,87 +1082,118 @@ function ProjectTimeline() {
             className="text-sm md:text-base font-medium leading-relaxed max-w-xl mx-auto"
             style={{ color: "rgba(253,249,240,0.6)" }}
           >
-            From first analysis to finished unit — here&apos;s what to expect at every stage.
+            From your first property analysis to a completed ADU, here&apos;s how the process typically unfolds.
           </p>
         </motion.div>
 
         {/* ── Desktop: horizontal ── */}
-        <div className="relative hidden sm:block">
-
-          {/* Gradient line — draws left to right on scroll */}
+        <div
+          className="relative hidden sm:block mt-12 md:mt-[72px]"
+          style={{ maxWidth: "1180px", margin: "72px auto 0" }}
+        >
+          {/* Connecting line — sits behind bubbles */}
           <motion.div
-            className="absolute z-0"
+            className="absolute"
             style={{
-              top: `${LABEL_H + 20}px`,
+              top: "106px",
               left: "12.5%",
               right: "12.5%",
-              height: "2px",
-              background: "linear-gradient(to right, rgba(255,255,255,0.15), #e9c400)",
+              height: "1px",
+              background: "rgba(225,181,47,0.75)",
               transformOrigin: "left",
+              zIndex: 1,
             }}
             initial={{ scaleX: 0 }}
             animate={isInView ? { scaleX: 1 } : {}}
             transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1], delay: 0.35 }}
           />
 
-          <div className="grid grid-cols-4">
-            {milestones.map(({ label, duration, icon }, i) => (
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
+            {milestones.map(({ label, duration, icon, description }, i) => (
               <motion.div
                 key={label}
-                className="flex flex-col items-center"
+                className="flex flex-col items-center px-4"
                 initial={{ opacity: 0, y: 16 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 + i * 0.2 }}
               >
-                {/* Icon badge + phase name — fixed height, anchored to bottom */}
+                {/* Icon */}
                 <div
-                  className="flex flex-col items-center justify-end gap-3 px-4 pb-5"
-                  style={{ height: `${LABEL_H}px` }}
+                  className="flex items-center justify-center mb-3 flex-shrink-0"
+                  style={{
+                    width: "42px",
+                    height: "42px",
+                    borderRadius: "14px",
+                    backgroundColor: "rgba(233,196,0,0.12)",
+                  }}
                 >
-                  <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: "rgba(233,196,0,0.12)" }}
-                  >
-                    <Icon name={icon} style={{ color: "#e9c400", fontSize: "1.2rem" }} />
-                  </div>
-                  <p className="font-bold text-[0.9rem] text-white text-center leading-snug">
-                    {label}
-                  </p>
+                  <Icon name={icon} style={{ color: "#e9c400", fontSize: "1.2rem" }} />
                 </div>
 
-                {/* Dot: gold fill + white inner ring + glow */}
+                {/* Stage name */}
+                <p
+                  className="text-white text-center leading-snug mb-4"
+                  style={{ fontSize: "15px", fontWeight: 600 }}
+                >
+                  {label}
+                </p>
+
+                {/* Bubble */}
                 <div
-                  className="relative z-10 w-10 h-10 rounded-full flex-shrink-0"
+                  className="flex-shrink-0 rounded-full"
                   style={{
-                    backgroundColor: "#e9c400",
-                    boxShadow:
-                      "inset 0 0 0 4px #fff, 0 4px 22px rgba(233,196,0,0.75), 0 0 0 1px rgba(233,196,0,0.25)",
+                    width: "32px",
+                    height: "32px",
+                    backgroundColor: "#E1B52F",
+                    border: "3px solid rgba(255,255,255,0.85)",
+                    boxShadow: "0 0 12px rgba(225,181,47,0.45)",
+                    position: "relative",
+                    zIndex: 2,
                   }}
                 />
 
-                {/* Duration */}
-                <div className="pt-5 px-4 text-center">
-                  <p className="text-sm font-semibold" style={{ color: "#e9c400" }}>
+                {/* Typical label + date */}
+                <div className="pt-4 text-center">
+                  <p
+                    className="uppercase tracking-widest mb-1"
+                    style={{ fontSize: "10px", color: "rgba(253,249,240,0.45)", fontWeight: 600, letterSpacing: "0.12em" }}
+                  >
+                    Typical:
+                  </p>
+                  <p style={{ fontSize: "15px", fontWeight: 600, color: "#E1B52F" }}>
                     {duration}
                   </p>
                 </div>
+
+                {/* Description */}
+                <p
+                  className="text-center mt-3 mx-auto"
+                  style={{
+                    fontSize: "13px",
+                    lineHeight: 1.6,
+                    maxWidth: "250px",
+                    color: "rgba(255,255,255,0.9)",
+                  }}
+                >
+                  {description}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
 
         {/* ── Mobile: vertical ── */}
-        <div className="sm:hidden relative">
-          {/* Vertical gradient line behind dots */}
+        <div className="sm:hidden relative mt-12">
+          {/* Vertical line behind dots */}
           <motion.div
             className="absolute origin-top"
             style={{
-              left: "19px",
+              left: "15px",
               top: 0,
               bottom: "20px",
-              width: "2px",
-              background: "linear-gradient(to bottom, rgba(255,255,255,0.15), #e9c400)",
-              zIndex: 0,
+              width: "1px",
+              background: "rgba(225,181,47,0.75)",
+              zIndex: 1,
             }}
             initial={{ scaleY: 0 }}
             animate={isInView ? { scaleY: 1 } : {}}
@@ -1148,35 +1201,49 @@ function ProjectTimeline() {
           />
 
           <div className="space-y-10">
-            {milestones.map(({ label, duration, icon }, i) => (
+            {milestones.map(({ label, duration, icon, description }, i) => (
               <motion.div
                 key={label}
-                className="flex items-center gap-6"
+                className="flex items-start gap-6"
                 initial={{ opacity: 0, x: -10 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.55, ease: "easeOut", delay: 0.4 + i * 0.15 }}
               >
                 {/* Dot */}
                 <div
-                  className="relative w-10 h-10 rounded-full flex-shrink-0"
+                  className="flex-shrink-0 rounded-full"
                   style={{
-                    backgroundColor: "#e9c400",
-                    boxShadow: "inset 0 0 0 3px #fff, 0 3px 16px rgba(233,196,0,0.65)",
-                    zIndex: 10,
+                    width: "32px",
+                    height: "32px",
+                    backgroundColor: "#E1B52F",
+                    border: "3px solid rgba(255,255,255,0.85)",
+                    boxShadow: "0 0 12px rgba(225,181,47,0.45)",
+                    position: "relative",
+                    zIndex: 2,
                   }}
                 />
                 {/* Content */}
                 <div>
                   <div className="flex items-center gap-2 mb-1">
                     <Icon name={icon} style={{ color: "#e9c400", fontSize: "1rem" }} />
-                    <p className="font-bold text-base text-white leading-snug">{label}</p>
+                    <p className="text-white leading-snug" style={{ fontSize: "15px", fontWeight: 600 }}>{label}</p>
                   </div>
-                  <p className="text-sm font-semibold" style={{ color: "#e9c400" }}>{duration}</p>
+                  <p className="uppercase mb-0.5" style={{ fontSize: "10px", color: "rgba(253,249,240,0.45)", fontWeight: 600, letterSpacing: "0.12em" }}>Typical:</p>
+                  <p className="mb-1" style={{ fontSize: "15px", fontWeight: 600, color: "#E1B52F" }}>{duration}</p>
+                  <p style={{ fontSize: "13px", lineHeight: 1.6, color: "rgba(253,249,240,0.5)" }}>{description}</p>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
+
+        {/* Disclaimer */}
+        <p
+          className="text-center mt-9"
+          style={{ fontSize: "12px", lineHeight: 1.5, color: "rgba(253,249,240,0.75)" }}
+        >
+          Timelines vary by city, property conditions, utility requirements, and permit review cycles.
+        </p>
 
       </div>
     </div>
@@ -1185,17 +1252,16 @@ function ProjectTimeline() {
 
 function Services() {
   return (
-    <section className="py-16 md:py-32 bg-surface" id="services">
+    <section className="pt-6 pb-6 md:pt-8 md:pb-8 bg-surface" id="services">
       <div className="container mx-auto px-8">
 
         {/* Header */}
         <FadeUp className="max-w-3xl mx-auto text-center mb-20">
           <p className="text-[11px] font-bold uppercase tracking-[0.22em] mb-5" style={{ color: "#72787c" }}>
-            Our Services
+            Our Process
           </p>
           <h2 className="font-headline text-4xl md:text-5xl font-bold leading-tight" style={{ color: "#002b38" }}>
-            A Fully Guided ADU Process Designed To Help You{" "}
-            <span style={{ color: "#e9c400" }}>Maximize ROI</span>
+            A <span style={{ color: "#e9c400" }}>Clear Path</span> From Property Review To Completed ADU
           </h2>
         </FadeUp>
 
@@ -1203,7 +1269,7 @@ function Services() {
         <ProjectTimeline />
 
         {/* Service list — clean icon + title rows (mobile only) */}
-        <div className="md:hidden mb-24">
+        <div className="md:hidden mb-10">
           <StaggerFadeUp className="flex flex-col gap-5">
             {services.map(({ icon, title, body }) => (
               <FadeUpItem key={title}>
@@ -1225,7 +1291,7 @@ function Services() {
         </div>
 
         {/* Service cards grid — 3 columns (desktop only) */}
-        <div className="hidden md:block mb-24">
+        <div className="hidden md:block mb-10">
           <StaggerFadeUp className="grid grid-cols-3 gap-5">
             {services.map(({ icon, title, body }) => (
               <FadeUpItem key={title}>
@@ -1266,7 +1332,7 @@ function Services() {
         <FadeUp className="max-w-3xl mx-auto text-center py-2 md:py-0">
           <GoldDivider />
           <p
-            className="font-headline font-semibold italic leading-relaxed text-on-background my-3 md:my-12"
+            className="font-headline font-semibold italic leading-relaxed text-on-background my-3 md:my-8"
             style={{ fontSize: "clamp(1.5rem,3vw,2.25rem)" }}
           >
             &ldquo;Our process isn&apos;t just about building a unit; it&apos;s about engineering an
@@ -1275,13 +1341,13 @@ function Services() {
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-on-surface-variant mb-3 md:mb-6">
             — The Clear Path ADU Promise
           </p>
-          <div className="flex justify-center mb-3 md:mb-12">
+          <div className="flex justify-center mb-3 md:mb-8">
             <Image
               src="/images/logo.png"
               alt="Clear Path ADU"
-              width={100}
-              height={30}
-              style={{ width: "100px", height: "auto" }}
+              width={140}
+              height={42}
+              style={{ width: "140px", height: "auto" }}
             />
           </div>
           <GoldDivider />
@@ -1340,7 +1406,7 @@ function SuccessOutcome() {
       <div className="relative z-10 grid lg:grid-cols-2">
 
         {/* Left: headline + checklist */}
-        <div className="flex flex-col justify-center gap-14 px-10 py-10 md:py-20 lg:px-16 xl:px-20">
+        <div className="flex flex-col justify-center gap-14 px-10 py-8 md:py-12 lg:px-16 xl:px-20">
 
           <FadeUp>
             <h2
@@ -1426,10 +1492,10 @@ const risks = [
 
 function FailureStakes() {
   return (
-    <section className="py-16 md:py-32 bg-white">
+    <section className="pt-6 pb-6 md:pt-8 md:pb-8 bg-white">
       <div className="container mx-auto px-8">
         {/* Header */}
-        <FadeUp className="mb-20">
+        <FadeUp className="mb-10">
           <div className="flex items-center gap-3 mb-6">
             <Icon name="warning_amber" className="text-xl" style={{ color: "#e9c400" }} />
             <p
@@ -1452,7 +1518,7 @@ function FailureStakes() {
         </FadeUp>
 
         {/* Cards */}
-        <StaggerFadeUp className="grid md:grid-cols-3 gap-6 mb-16">
+        <StaggerFadeUp className="grid md:grid-cols-3 gap-6 mb-8">
           {risks.map(({ num, title, body }) => (
             <FadeUpItem key={num}>
               <motion.div
@@ -1545,37 +1611,6 @@ function FailureStakes() {
 
 // ─── Why Clear Path ADU ───────────────────────────────────────────────────────
 
-const trustItems = [
-  { icon: "shield", label: "Risk Reduction" },
-  { icon: "gavel", label: "Expert Advocacy" },
-  { icon: "trending_up", label: "Value Maximization" },
-  { icon: "visibility", label: "Full Transparency" },
-];
-
-function TrustStrip() {
-  return (
-    <section className="py-8 md:py-10 bg-surface border-y" style={{ borderColor: "#e6e2d9" }}>
-      <div className="container mx-auto px-8">
-        <FadeUp>
-          <div className="flex flex-wrap justify-center gap-6 md:gap-12">
-            {trustItems.map(({ icon, label }) => (
-              <div key={label} className="flex items-center gap-2.5">
-                <div
-                  className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-                  style={{ backgroundColor: "rgba(233,196,0,0.12)" }}
-                >
-                  <Icon name={icon} style={{ color: "#e9c400", fontSize: "1.1rem" }} />
-                </div>
-                <span className="font-headline font-semibold text-sm" style={{ color: "#002b38" }}>{label}</span>
-              </div>
-            ))}
-          </div>
-        </FadeUp>
-      </div>
-    </section>
-  );
-}
-
 // ─── FAQ ──────────────────────────────────────────────────────────────────────
 
 const faqs = [
@@ -1593,7 +1628,11 @@ const faqs = [
   },
   {
     q: "What is a Pre-Feasibility Report?",
-    a: "It's your starting point before spending anything on plans or permits. We analyze your property's zoning, setbacks, utility access, and size limits so you know exactly what you can build and what it will cost before committing a dollar.",
+    a: "A Pre-Feasibility Report is a property-specific ADU planning report that helps you understand what your lot may support before you spend thousands on design, permits, or construction. It can include zoning details, a custom ADU proposal, estimated buildable size, preliminary site placement, cost breakdowns, timeline, utility red flags, income potential, and recommended next steps.",
+  },
+  {
+    q: "What type of ADU is best for my property?",
+    a: "The best ADU type depends on your lot size, existing structures, setbacks, access, utilities, budget, and income goals. Our Pre-Feasibility Report helps compare your options so you can see which path makes the most sense before spending money on plans, permits, or construction.",
   },
   {
     q: "Will I have to manage contractors and city departments myself?",
@@ -1602,6 +1641,10 @@ const faqs = [
   {
     q: "What if my ADU doesn't generate rental income?",
     a: "Every project starts with a financial feasibility analysis. We only move forward when the numbers make sense for your specific property and goals — so you build with confidence, not guesswork.",
+  },
+  {
+    q: "Do I need all the cash upfront to build an ADU?",
+    a: "No. Many homeowners explore financing options such as home equity, renovation loans, construction financing, or ADU-specific lending programs. The first step is understanding what your property can support, what the project may cost, and whether the numbers make sense for your goals. Once that is clear, budget and financing options can be reviewed with more confidence.",
   },
 ];
 
@@ -1613,7 +1656,7 @@ function FAQ() {
 
 function FinalCTA() {
   return (
-    <section className="pt-16 pb-10 md:py-32 text-white relative overflow-hidden" style={{ backgroundColor: "#002b38" }}>
+    <section className="py-10 md:py-16 text-white relative overflow-hidden" style={{ backgroundColor: "#002b38" }}>
       {/* Abstract floor plan geometry */}
       <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
         <svg width="100%" height="100%" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1646,9 +1689,9 @@ function FinalCTA() {
             <Image
               src="/images/logo.png"
               alt="Clear Path ADU"
-              width={140}
-              height={42}
-              style={{ width: "140px", height: "auto" }}
+              width={160}
+              height={48}
+              style={{ width: "160px", height: "auto" }}
             />
           </div>
           <p className="text-[11px] font-bold uppercase tracking-[0.22em] mb-8" style={{ color: "rgba(233,196,0,0.7)" }}>
@@ -1786,7 +1829,6 @@ export default function Home() {
       <SuccessOutcome />
       <FailureStakes />
       <Services />
-      <TrustStrip />
       <FAQ />
       <FinalCTA />
       <Footer />

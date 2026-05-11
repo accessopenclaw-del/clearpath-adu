@@ -287,7 +287,7 @@ function Hero() {
     <PremiumHero
       title="Unlock Your Property's Full Potential With a Clear Path to Building an ADU"
       subtitle="California's Premier ADU Specialist"
-      description="We help California homeowners unlock their property's full ADU potential and guide them from first question to finished unit. Before you spend thousands on plans, get the clarity you need to move forward with confidence."
+      description="We start with your property. We end with your finished ADU. Everything in between — feasibility, design, permits, and construction — handled by one experienced California team."
       ctaPrimary="Check If My Property Qualifies"
       ctaSecondary="Speak To An Expert"
       videoSrc="/images/hero-video.mp4"
@@ -372,16 +372,14 @@ function CustomerProblem() {
           <div>
             <FadeUp>
               <h2 className="font-headline text-4xl md:text-5xl font-bold leading-tight mb-8" style={{ color: "#002b38" }}>
-                You May Be Sitting On{" "}
-                <span style={{ color: "#e9c400" }}>Hidden Income</span>
-                {" "}and Equity — But The ADU Process Can Feel Confusing
+                You May Be Sitting On <span style={{ color: "#e9c400" }}>Hidden Income</span> and Equity — But The ADU Process Can Feel Confusing
               </h2>
             </FadeUp>
             <StaggerFadeUp className="space-y-6 mb-10">
               {[
                 '"How much will it actually cost to build?"',
                 '"What size unit does my lot legally allow?"',
-                '"How do I manage contractors without getting overwhelmed?"',
+                '"What should I know before paying for plans or hiring a contractor?"',
               ].map((q) => (
                 <FadeUpItem key={q} className="flex gap-4 items-start">
                   <Icon name="help_outline" className="mt-1 flex-shrink-0" style={{ color: "#e9c400" }} />
@@ -427,63 +425,6 @@ function CustomerProblem() {
 }
 
 // ─── Internal / Emotional Problem ────────────────────────────────────────────
-
-function InternalProblem() {
-  return (
-    <section className="py-10 md:py-16 bg-white relative overflow-hidden">
-      {/* Ghost architectural house outline */}
-      <div className="absolute right-0 inset-y-0 flex items-center pointer-events-none select-none opacity-[0.045]" aria-hidden="true">
-        <svg width="440" height="360" viewBox="0 0 440 360" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Roof */}
-          <path d="M220 24L410 148H30L220 24Z" stroke="#002b38" strokeWidth="2.5" strokeLinejoin="round"/>
-          {/* Body */}
-          <rect x="40" y="148" width="360" height="196" stroke="#002b38" strokeWidth="2.5"/>
-          {/* Chimney */}
-          <rect x="300" y="52" width="32" height="64" stroke="#002b38" strokeWidth="2"/>
-          {/* Door */}
-          <rect x="178" y="236" width="84" height="108" rx="2" stroke="#002b38" strokeWidth="2"/>
-          {/* Door knob */}
-          <circle cx="252" cy="294" r="4" stroke="#002b38" strokeWidth="1.5"/>
-          {/* Left window */}
-          <rect x="68" y="178" width="88" height="64" stroke="#002b38" strokeWidth="2"/>
-          <line x1="112" y1="178" x2="112" y2="242" stroke="#002b38" strokeWidth="1"/>
-          <line x1="68" y1="210" x2="156" y2="210" stroke="#002b38" strokeWidth="1"/>
-          {/* Right window */}
-          <rect x="284" y="178" width="88" height="64" stroke="#002b38" strokeWidth="2"/>
-          <line x1="328" y1="178" x2="328" y2="242" stroke="#002b38" strokeWidth="1"/>
-          <line x1="284" y1="210" x2="372" y2="210" stroke="#002b38" strokeWidth="1"/>
-          {/* Foundation line */}
-          <line x1="20" y1="344" x2="420" y2="344" stroke="#002b38" strokeWidth="1.5" strokeDasharray="6 4"/>
-        </svg>
-      </div>
-
-      <div className="container mx-auto px-8 max-w-5xl">
-        <FadeUp className="flex gap-10 items-center">
-          <div
-            className="flex-shrink-0 self-stretch rounded-full"
-            style={{ width: "6px", backgroundColor: "#e9c400", minHeight: "100px" }}
-          />
-          <div>
-            <h2
-              className="font-headline font-extrabold leading-tight mb-6"
-              style={{ fontSize: "clamp(2rem,4.5vw,3.5rem)", color: "#002b38" }}
-            >
-              You Shouldn&apos;t Navigate{" "}
-              <span style={{ color: "#e9c400" }}>This Alone</span>
-            </h2>
-            <p className="text-xl text-on-surface-variant leading-relaxed max-w-2xl mb-8">
-              Your property is too valuable to risk on the wrong team. You deserve a partner who
-              treats it like their own.
-            </p>
-            <CtaButton className="px-3 py-4 text-[11px] md:px-10 md:text-base font-bold">
-              Check If My Property Qualifies
-            </CtaButton>
-          </div>
-        </FadeUp>
-      </div>
-    </section>
-  );
-}
 
 // ─── Guide Section ────────────────────────────────────────────────────────────
 
@@ -555,15 +496,15 @@ function GuideSection() {
             </div>
             {/* Mobile headline */}
             <h2 className="font-headline font-bold text-white leading-tight text-4xl md:hidden">
-              Clear Path ADU
+              From Feasibility To Finished ADU,
               <br />
-              <span className="text-3xl" style={{ color: "#e9c400" }}>Is Here To Guide You</span>
+              <span className="text-3xl" style={{ color: "#e9c400" }}>We Help Keep The Process Clear</span>
             </h2>
             {/* Desktop headline */}
             <h2 className="font-headline font-bold text-white leading-tight hidden md:block md:text-[clamp(2.2rem,3.5vw,3.25rem)]">
-              Clear Path ADU Is Here
+              From Feasibility To Finished ADU,
               <br />
-              <span style={{ color: "#e9c400" }}>To Guide You</span>
+              <span style={{ color: "#e9c400" }}>We Help Keep The Process Clear</span>
             </h2>
           </FadeUp>
 
@@ -581,20 +522,20 @@ function GuideSection() {
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "rgba(233,196,0,0.15)" }}>
                     <Icon name="favorite" style={{ color: "#e9c400", fontSize: "1.3rem" }} />
                   </div>
-                  <h3 className="text-lg font-bold font-headline text-white truncate">Stress-Free Every Step</h3>
+                  <h3 className="text-lg font-bold font-headline text-white truncate">Feasibility First</h3>
                 </div>
                 <p className="text-white/65 text-base leading-relaxed flex-1">
-                  We know the anxiety of starting a build. That&apos;s why we treat your property like
-                  our own, ensuring every square foot is optimized for value and your peace of mind.
+                  We review zoning, setbacks, site conditions, utilities, and buildable area before
+                  you commit to the expensive parts of the project.
                 </p>
                 <ul className="space-y-3.5">
                   <li className="flex items-center gap-3 text-white/65 text-sm">
                     <Icon name="check_circle" style={{ color: "#e9c400", fontSize: "1.1rem" }} className="flex-shrink-0" />
-                    Homeowner-first approach
+                    Property-specific zoning and site review
                   </li>
                   <li className="flex items-center gap-3 text-white/65 text-sm">
                     <Icon name="check_circle" style={{ color: "#e9c400", fontSize: "1.1rem" }} className="flex-shrink-0" />
-                    Respect for your timeline and budget
+                    Know what&apos;s buildable before you spend
                   </li>
                 </ul>
               </div>
@@ -613,20 +554,20 @@ function GuideSection() {
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "rgba(233,196,0,0.15)" }}>
                     <Icon name="verified" style={{ color: "#e9c400", fontSize: "1.3rem" }} />
                   </div>
-                  <h3 className="text-lg font-bold font-headline text-white truncate">Results You Can Trust</h3>
+                  <h3 className="text-lg font-bold font-headline text-white truncate">Guidance Beyond The Report</h3>
                 </div>
                 <p className="text-white/65 text-base leading-relaxed flex-1">
-                  With years of California zoning expertise and a track record of successful
-                  completions, we move your project forward with technical precision.
+                  If the project makes sense, we can help with design direction, permitting,
+                  contractor coordination, and construction oversight.
                 </p>
                 <ul className="space-y-3.5">
                   <li className="flex items-center gap-3 text-white/65 text-sm">
                     <Icon name="check_circle" style={{ color: "#e9c400", fontSize: "1.1rem" }} className="flex-shrink-0" />
-                    Expert California Zoning Knowledge
+                    Full-service design, permits, and construction
                   </li>
                   <li className="flex items-center gap-3 text-white/65 text-sm">
                     <Icon name="check_circle" style={{ color: "#e9c400", fontSize: "1.1rem" }} className="flex-shrink-0" />
-                    Proven Construction Oversight
+                    One experienced California team
                   </li>
                 </ul>
               </div>
@@ -975,7 +916,7 @@ function PreFeasibility() {
               {/* CTA */}
               <FadeUp delay={0.3} className="mt-6 pt-8 border-t border-[#e6e2d9]">
                 <CtaButton className="w-full px-3 md:px-10 py-5 text-[11px] md:text-[1rem]">
-                  Check If My Property Qualifies
+                  Get My Pre-Feasibility Report
                 </CtaButton>
               </FadeUp>
             </div>
@@ -1821,7 +1762,6 @@ export default function Home() {
       </div>
       <TrustBar />
       <CustomerProblem />
-      <InternalProblem />
       <GuideSection />
       <ThreeStepPlan />
       <KnowYourOptions />

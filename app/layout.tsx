@@ -20,7 +20,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "CLEAR PATH ADU | Turn Your Property Into Rental Income",
+  title: "Clear Path ADU | Unlock Your Property's Full ADU Potential",
   description:
     "We help California homeowners unlock their property's full ADU potential and guide them from first question to finished unit.",
 };

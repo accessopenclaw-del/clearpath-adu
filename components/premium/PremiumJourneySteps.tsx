@@ -18,7 +18,7 @@ const STEPS: JourneyStep[] = [
     num: "01",
     phase: "Discovery",
     title: "Start With Clarity",
-    body: "We run a comprehensive analysis of your property to determine exactly what can be built based on local laws.",
+    body: "We review your lot, zoning, setbacks, utilities, and ADU rules so you know what may be possible before spending on plans.",
     outcomeIcon: "description",
     outcome: "Property Feasibility Report",
     isStart: true,
@@ -27,15 +27,15 @@ const STEPS: JourneyStep[] = [
     num: "02",
     phase: "Strategy",
     title: "Build The Right Strategy",
-    body: "Build the right strategy with design direction, budget planning, and financial modeling that aligns with your goals — whether rental income, family housing, or long-term property value.",
+    body: "We outline the best ADU type, size, placement, cost range, timeline, and income path for your property and goals.",
     outcomeIcon: "draw",
     outcome: "Custom Design & Plan",
   },
   {
     num: "03",
     phase: "Build",
-    title: "Permits And Construction",
-    body: "From permit submittal to final inspection, we handle every step so your ADU gets built right and on time.",
+    title: "Manage Permits And Construction",
+    body: "Our team handles design, city approvals, contractor coordination, and construction oversight.",
     outcomeIcon: "home",
     outcome: "Your Finished ADU",
   },
@@ -218,8 +218,8 @@ export function PremiumJourneySteps() {
             Our Process
           </p>
           <h2 className="font-headline text-4xl md:text-5xl font-bold leading-tight" style={{ color: "#002b38" }}>
-            A Simple 3-Step Plan To Move Forward{" "}
-            <span style={{ color: "#e9c400" }}>With Confidence</span>
+            A <span style={{ color: "#e9c400" }}>Clear Path</span> From Property Review To{" "}
+            <span style={{ color: "#e9c400" }}>Buildable Plan</span>
           </h2>
         </motion.div>
 

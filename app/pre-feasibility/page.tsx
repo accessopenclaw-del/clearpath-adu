@@ -302,185 +302,24 @@ function Footer() {
 
 // ─── PDF Document Mockup ──────────────────────────────────────────────────────
 
-const reportRows = [
-  { label: "ADU Eligibility", value: "Eligible", positive: true },
-  { label: "Max Buildable Size", value: "Up to 1,200 sq ft", positive: true },
-  { label: "Recommended Placement", value: "Rear Yard", positive: true },
-  { label: "Multiple ADU Potential", value: "Both Confirmed", positive: true },
-  { label: "Parking Exemption", value: "Applicable", positive: true },
-  { label: "Utility Red Flags", value: "None Identified", positive: true },
-];
-
 function PDFMockup() {
   return (
-    <div className="relative mx-auto select-none" style={{ maxWidth: "520px" }}>
-      {/* Depth shadow layers */}
+    <div className="relative mx-auto select-none w-full">
       <div
-        className="absolute rounded-xl"
-        style={{
-          inset: 0,
-          transform: "translate(10px, 10px)",
-          backgroundColor: "rgba(233,196,0,0.18)",
-          borderRadius: "12px",
-        }}
-      />
-      <div
-        className="absolute rounded-xl"
-        style={{
-          inset: 0,
-          transform: "translate(5px, 5px)",
-          backgroundColor: "rgba(0,43,56,0.12)",
-          borderRadius: "12px",
-        }}
-      />
-
-      {/* Main document */}
-      <div
-        className="relative rounded-xl overflow-hidden"
+        className="rounded-xl overflow-hidden"
         style={{
           backgroundColor: "#ffffff",
-          boxShadow: "0 24px 72px rgba(0,0,0,0.16), 0 4px 16px rgba(0,0,0,0.08)",
+          boxShadow: "0 8px 40px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06)",
           border: "1px solid #e6e2d9",
         }}
       >
-        {/* Navy header */}
-        <div className="px-7 py-6" style={{ backgroundColor: "#002b38" }}>
-          {/* Brand row */}
-          <div className="flex items-start justify-between mb-5">
-            <div>
-              <div className="flex items-center gap-2.5 mb-1">
-                <div
-                  className="w-5 h-5 rounded flex-shrink-0"
-                  style={{ backgroundColor: "#e9c400" }}
-                />
-                <span className="font-headline font-black text-white text-sm tracking-widest uppercase">
-                  Clear Path ADU
-                </span>
-              </div>
-              <p
-                className="text-[10px] uppercase tracking-[0.2em] font-medium"
-                style={{ color: "rgba(255,255,255,0.4)", paddingLeft: "29px" }}
-              >
-                Property Analysis Division
-              </p>
-            </div>
-            <div
-              className="px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest border flex-shrink-0"
-              style={{ color: "#e9c400", borderColor: "rgba(233,196,0,0.4)", backgroundColor: "rgba(233,196,0,0.06)" }}
-            >
-              Confidential
-            </div>
-          </div>
-
-          {/* Divider */}
-          <div className="h-px mb-5" style={{ backgroundColor: "rgba(233,196,0,0.2)" }} />
-
-          {/* Report title */}
-          <h2
-            className="font-headline font-black text-white leading-tight mb-1"
-            style={{ fontSize: "1.4rem" }}
-          >
-            ADU Pre-Feasibility Report
-          </h2>
-          <p className="text-[11px] font-medium" style={{ color: "rgba(255,255,255,0.45)" }}>
-            Property-Specific Eligibility Analysis · Southern California
-          </p>
-        </div>
-
-        {/* Gold accent bar */}
-        <div
-          className="h-1.5"
-          style={{
-            background: "linear-gradient(90deg, #b89a00, #e9c400, #ffe16d, #e9c400, #b89a00)",
-          }}
+        <Image
+          src="/images/adu-report-mockup.png"
+          alt="ADU Pre-Feasibility Report"
+          width={800}
+          height={1040}
+          className="w-full h-auto block"
         />
-
-        {/* Content area */}
-        <div className="px-7 py-6">
-          {/* Property address field */}
-          <div
-            className="p-4 rounded-lg mb-6"
-            style={{ backgroundColor: "#f9f7f3", border: "1px solid #ece8df" }}
-          >
-            <p
-              className="text-[9px] font-black uppercase tracking-[0.22em] mb-1.5"
-              style={{ color: "#72787c" }}
-            >
-              Subject Property
-            </p>
-            <p className="font-bold text-sm" style={{ color: "#002b38" }}>
-              1234 Maple Avenue, Los Angeles, CA 90028
-            </p>
-            <p className="text-[10px] mt-0.5" style={{ color: "#72787c" }}>
-              Lot Size: 6,500 sq ft · Zoning: R1 · APN: 5432-019-001
-            </p>
-          </div>
-
-          {/* Report rows */}
-          <div>
-            {reportRows.map(({ label, value }, i) => (
-              <div
-                key={label}
-                className="flex items-center justify-between py-2.5"
-                style={{
-                  borderBottom: i < reportRows.length - 1 ? "1px solid #f0ece3" : "none",
-                }}
-              >
-                <span className="text-xs font-medium" style={{ color: "#72787c" }}>
-                  {label}
-                </span>
-                <span
-                  className="text-xs font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5"
-                  style={{
-                    backgroundColor: "rgba(233,196,0,0.1)",
-                    color: "#002b38",
-                  }}
-                >
-                  <span style={{ color: "#e9c400", fontSize: "10px" }}>✓</span>
-                  {value}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          {/* Bottom meta */}
-          <div
-            className="mt-5 pt-4 flex items-center justify-between"
-            style={{ borderTop: "1px solid #f0ece3" }}
-          >
-            <div className="flex items-center gap-2">
-              <div
-                className="w-3.5 h-3.5 rounded-sm flex-shrink-0"
-                style={{ backgroundColor: "#e9c400" }}
-              />
-              <span className="text-[9px] font-bold uppercase tracking-wider" style={{ color: "#72787c" }}>
-                Prepared by Clear Path ADU
-              </span>
-            </div>
-            <span
-              className="text-[9px] font-black px-2.5 py-1 rounded-full uppercase tracking-wide"
-              style={{ backgroundColor: "rgba(0,43,56,0.07)", color: "#002b38" }}
-            >
-              ELIGIBLE TO BUILD
-            </span>
-          </div>
-        </div>
-
-        {/* Footer stripe */}
-        <div
-          className="px-7 py-3 flex items-center justify-between"
-          style={{ backgroundColor: "#f9f7f3", borderTop: "1px solid #ece8df" }}
-        >
-          <span className="text-[9px] uppercase tracking-widest" style={{ color: "#aaa" }}>
-            Delivered within 24–48 hours
-          </span>
-          <span
-            className="text-[9px] font-black uppercase tracking-wider"
-            style={{ color: "#e9c400" }}
-          >
-            clearpathadu.com
-          </span>
-        </div>
       </div>
     </div>
   );
@@ -541,17 +380,19 @@ function PaymentIcons() {
 // ─── Checkout Card (right sticky column) ─────────────────────────────────────
 
 const checklistItems = [
-  "ADU eligibility assessment",
+  "ADU eligibility assessment ($497 value)",
   "Maximum buildable size estimate",
-  "Optimal placement recommendation",
-  "Multiple ADU potential review",
+  "Zoning & property review",
   "Parking requirement check",
   "Utility & trenching red flag review",
-  "On-site property walkthrough",
-  "Site-specific analysis + property photos",
+  "Multiple ADU potential review",
+  "Preliminary site map concept",
+  "15-minute expert report review call ($397 value)",
+  "On-site property walkthrough ($697 value)",
+  "Site-specific property analysis",
   "Custom approval strategy guidance",
-  "15-minute expert review call",
-  "PDF report delivered in 24–48 hours",
+  "Next-step roadmap and action plan",
+  "PDF report emailed directly to your inbox",
 ];
 
 function CheckoutCard() {
@@ -680,13 +521,45 @@ function CheckoutCard() {
 
         {/* Checklist */}
         <div className="flex flex-col gap-2 mb-6">
-          {checklistItems.map((item) => (
+          {/* Core items 1–12 */}
+          {checklistItems.slice(0, 11).map((item) => (
             <div key={item} className="flex items-start gap-2.5">
               <Icon
                 name="check_circle"
                 style={{ color: "#e9c400", fontSize: "1rem", flexShrink: 0, marginTop: "1px" }}
               />
               <span className="text-sm leading-snug" style={{ color: "#41484b" }}>
+                {item}
+              </span>
+            </div>
+          ))}
+
+          {/* Bonus divider + badge */}
+          <div className="h-px my-3" style={{ backgroundColor: "rgba(233,196,0,0.4)" }} />
+          <div className="flex items-center mb-2">
+            <span
+              className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.18em]"
+              style={{ backgroundColor: "#e9c400", color: "#002b38" }}
+            >
+              ★ Also Included — Bonus
+            </span>
+          </div>
+
+          {/* Bonus items 13–14 */}
+          {checklistItems.slice(11).map((item) => (
+            <div
+              key={item}
+              className="flex items-start gap-2.5 rounded-lg px-3 py-2.5"
+              style={{
+                backgroundColor: "rgba(233,196,0,0.15)",
+                borderLeft: "3px solid #e9c400",
+              }}
+            >
+              <Icon
+                name="check_circle"
+                style={{ color: "#e9c400", fontSize: "1rem", flexShrink: 0, marginTop: "1px" }}
+              />
+              <span className="text-sm font-bold leading-snug" style={{ color: "#002b38" }}>
                 {item}
               </span>
             </div>
@@ -709,10 +582,6 @@ function CheckoutCard() {
           <span className="text-on-surface-variant/30">·</span>
           <span className="flex items-center gap-1">
             <span>✅</span> 100% Clarity Guarantee
-          </span>
-          <span className="text-on-surface-variant/30">·</span>
-          <span className="flex items-center gap-1">
-            <span>📄</span> PDF 24–48hrs
           </span>
         </div>
 
@@ -860,201 +729,6 @@ function TheProblem() {
   );
 }
 
-// ─── Stacked Offer ────────────────────────────────────────────────────────────
-
-const offerGroups = [
-  {
-    tag: "The Eligibility Report",
-    value: "$497",
-    icon: "description",
-    items: [
-      "ADU eligibility assessment — know exactly what is and isn't allowed on your lot",
-      "Maximum buildable size estimate — your legally permitted square footage",
-      "Optimal placement recommendation — the best location to clear all restrictions",
-      "Multiple ADU potential review — can you build two units and double your income?",
-      "Parking requirement check — avoid the most common approval killer",
-    ],
-  },
-  {
-    tag: "The Expert Review Call",
-    value: "$397",
-    icon: "headset_mic",
-    items: [
-      "15-minute 1-on-1 call with a California ADU specialist — not a sales rep",
-      "Custom approval strategy — your personalized roadmap from report to permit",
-    ],
-  },
-  {
-    tag: "The On-Site Walkthrough",
-    value: "$697",
-    icon: "home_pin",
-    items: [
-      "Physical walkthrough of your lot in real conditions — not just satellite data",
-      "Documented site photos + property-specific placement analysis",
-      "Utility and trenching red-flag review — catch expensive surprises early",
-      "Personalized layout recommendations tailored to your exact yard",
-    ],
-  },
-  {
-    tag: "The Professional PDF Deliverable",
-    value: "$97",
-    icon: "picture_as_pdf",
-    items: [
-      "Formatted, professional PDF sent directly to your inbox",
-      "Shareable with your architect, builder, or lender — ready to act on immediately",
-    ],
-  },
-];
-
-function StackedOffer() {
-  return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-8 max-w-3xl">
-
-        {/* Section headline */}
-        <FadeUp className="text-center mb-12">
-          <p
-            className="text-[11px] font-black uppercase tracking-[0.22em] mb-5"
-            style={{ color: "#72787c" }}
-          >
-            The Complete Clarity Package
-          </p>
-          <h2
-            className="font-headline font-bold leading-tight"
-            style={{ fontSize: "clamp(1.8rem,4vw,2.75rem)", color: "#002b38" }}
-          >
-            <span style={{ color: "#e9c400" }}>Everything Included</span>
-            {" "}In Your $495 Package
-          </h2>
-        </FadeUp>
-
-        {/* Unified premium card */}
-        <FadeUp>
-          <div
-            className="rounded-2xl overflow-hidden"
-            style={{
-              border: "2px solid #002b38",
-              boxShadow: "0 8px 40px rgba(0,0,0,0.1), 0 0 0 4px rgba(233,196,0,0.08)",
-            }}
-          >
-            {/* Gold top accent bar */}
-            <div
-              className="h-1.5"
-              style={{
-                background: "linear-gradient(90deg, #b89a00, #e9c400, #ffe16d, #e9c400, #b89a00)",
-              }}
-            />
-
-            {/* Groups */}
-            <div className="bg-white">
-              {offerGroups.map(({ tag, value, icon, items }, groupIndex) => (
-                <div key={tag}>
-                  {/* Thin gold divider between groups */}
-                  {groupIndex > 0 && (
-                    <div
-                      className="mx-7 md:mx-9"
-                      style={{ height: "1px", backgroundColor: "rgba(233,196,0,0.3)" }}
-                    />
-                  )}
-
-                  <div className="px-7 md:px-9 py-6">
-                    {/* Group header */}
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center gap-3">
-                        <div
-                          className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
-                          style={{ backgroundColor: "rgba(233,196,0,0.12)" }}
-                        >
-                          <Icon name={icon} style={{ color: "#e9c400", fontSize: "1.15rem" }} />
-                        </div>
-                        <h3
-                          className="font-headline font-bold text-base"
-                          style={{ color: "#002b38" }}
-                        >
-                          {tag}
-                        </h3>
-                      </div>
-                      {/* Value badge */}
-                      <div
-                        className="flex-shrink-0 ml-3 px-3 py-1 rounded-full"
-                        style={{
-                          backgroundColor: "rgba(233,196,0,0.12)",
-                          border: "1px solid rgba(233,196,0,0.4)",
-                        }}
-                      >
-                        <span className="font-black text-xs" style={{ color: "#002b38" }}>
-                          {value} value
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Bullet items */}
-                    <ul className="flex flex-col gap-2">
-                      {items.map((item) => (
-                        <li key={item} className="flex items-start gap-3">
-                          <Icon
-                            name="check_circle"
-                            style={{ color: "#e9c400", fontSize: "1rem", flexShrink: 0, marginTop: "2px" }}
-                          />
-                          <span className="text-sm leading-relaxed" style={{ color: "#41484b" }}>
-                            {item}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Bottom summary + CTA */}
-            <div style={{ borderTop: "2px solid #002b38" }}>
-              {/* Total value summary */}
-              <div
-                className="px-7 md:px-9 py-6"
-                style={{ backgroundColor: "#fdf9f0" }}
-              >
-                <div className="flex items-center justify-between flex-wrap gap-2 mb-1">
-                  <span className="text-sm font-medium" style={{ color: "#72787c" }}>
-                    If you sourced all of this separately:
-                  </span>
-                  <span
-                    className="font-bold line-through text-base"
-                    style={{ color: "#9ca3af", textDecorationColor: "#6b7280", textDecorationThickness: "2px" }}
-                  >
-                    $1,688
-                  </span>
-                </div>
-                <div className="flex items-baseline gap-2 flex-wrap">
-                  <span className="font-headline font-black text-2xl" style={{ color: "#002b38" }}>
-                    You invest just $495
-                  </span>
-                  <span className="text-sm" style={{ color: "#72787c" }}>
-                    — Less than the cost of a single hour with a permit consultant
-                  </span>
-                </div>
-              </div>
-
-              {/* CTA */}
-              <div
-                className="px-7 md:px-9 py-6 text-center"
-                style={{ backgroundColor: "#002b38" }}
-              >
-                <CtaButton className="w-full py-4 text-base font-bold mb-3">
-                  Get My ADU Clarity Report — $495
-                </CtaButton>
-                <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
-                  Delivered in 24–48 hours · No architect required · 100% Clarity Guarantee
-                </p>
-              </div>
-            </div>
-          </div>
-        </FadeUp>
-
-      </div>
-    </section>
-  );
-}
 
 // ─── Testimonials ─────────────────────────────────────────────────────────────
 
@@ -1183,174 +857,86 @@ function Testimonials() {
   );
 }
 
-// ─── 100% Clarity Guarantee ───────────────────────────────────────────────────
+// ─── Final Close ──────────────────────────────────────────────────────────────
 
-function ClarityGuarantee() {
-  return (
-    <section className="py-16 md:py-24" style={{ backgroundColor: "#fdf9f0" }}>
-      <div className="container mx-auto px-8 max-w-3xl text-center">
-        <FadeUp>
-          {/* Guarantee badge */}
-          <div
-            className="inline-flex flex-col items-center justify-center w-36 h-36 rounded-full mb-10 mx-auto"
-            style={{
-              backgroundColor: "#002b38",
-              border: "4px solid #e9c400",
-              boxShadow: "0 0 0 8px rgba(233,196,0,0.1), 0 16px 48px rgba(0,0,0,0.12)",
-            }}
-          >
-            <span
-              className="font-headline font-black leading-none"
-              style={{ fontSize: "2.25rem", color: "#e9c400" }}
-            >
-              100%
-            </span>
-            <span
-              className="text-[10px] font-bold uppercase tracking-widest mt-1"
-              style={{ color: "rgba(255,255,255,0.7)" }}
-            >
-              Guaranteed
-            </span>
-          </div>
-
-          <p
-            className="text-[11px] font-black uppercase tracking-[0.22em] mb-5"
-            style={{ color: "#72787c" }}
-          >
-            Our Promise To You
-          </p>
-          <h2
-            className="font-headline font-bold leading-tight mb-6"
-            style={{ fontSize: "clamp(1.8rem,4vw,2.75rem)", color: "#002b38" }}
-          >
-            The{" "}
-            <span style={{ color: "#e9c400" }}>100% Clarity Guarantee</span>
-          </h2>
-          <p className="text-on-surface-variant text-lg leading-relaxed mb-6 max-w-2xl mx-auto">
-            If your report doesn&apos;t give you clear, actionable direction on what you can build on
-            your property — we will review your property again at{" "}
-            <strong>no additional cost</strong>. No forms. No hassle. Just email us.
-          </p>
-          <p className="text-on-surface-variant leading-relaxed mb-12 max-w-xl mx-auto">
-            We stand behind every report because we know what&apos;s at stake. Your time, your money,
-            and your future rental income are on the line. We don&apos;t take that lightly.
-          </p>
-
-          {/* Guarantee chips */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {[
-              { icon: "verified", label: "Property-Specific Analysis" },
-              { icon: "refresh", label: "Free Re-Review If Needed" },
-              { icon: "support_agent", label: "Expert-Backed Report" },
-              { icon: "schedule", label: "Delivered In 24–48 Hours" },
-            ].map(({ icon, label }) => (
-              <div
-                key={label}
-                className="flex items-center gap-2 px-4 py-2.5 rounded-full"
-                style={{
-                  backgroundColor: "rgba(233,196,0,0.08)",
-                  border: "1px solid rgba(233,196,0,0.25)",
-                }}
-              >
-                <Icon name={icon} style={{ color: "#e9c400", fontSize: "1rem" }} />
-                <span className="text-xs font-semibold" style={{ color: "#41484b" }}>
-                  {label}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          <CtaButton className="px-10 py-4 text-base font-bold">
-            Get My ADU Clarity Report — $495
-          </CtaButton>
-        </FadeUp>
-      </div>
-    </section>
-  );
-}
-
-// ─── Final CTA ────────────────────────────────────────────────────────────────
-
-function FinalCTA() {
+function FinalClose() {
   return (
     <section
-      className="py-16 md:py-28 relative overflow-hidden"
-      style={{ backgroundColor: "#002b38" }}
+      className="py-20 md:py-28 relative overflow-hidden"
+      style={{ backgroundColor: "#fdf9f0" }}
     >
-      <FloorPlanSVG />
       <div className="relative z-10 container mx-auto px-8 max-w-3xl text-center">
         <FadeUp>
-          {/* Urgency badge */}
+          {/* Urgency pill */}
           <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-10"
-            style={{
-              backgroundColor: "rgba(233,196,0,0.1)",
-              border: "1px solid rgba(233,196,0,0.35)",
-            }}
+            style={{ backgroundColor: "#e9c400" }}
           >
             <span
               className="w-1.5 h-1.5 rounded-full flex-shrink-0 animate-pulse"
-              style={{ backgroundColor: "#e9c400" }}
+              style={{ backgroundColor: "#002b38" }}
             />
             <span
-              className="text-[11px] font-black uppercase tracking-[0.18em]"
-              style={{ color: "#e9c400" }}
+              className="text-[10px] font-black uppercase tracking-[0.2em]"
+              style={{ color: "#002b38" }}
             >
-              Limited Weekly Slots Available
+              Weekly on-site walkthrough slots are limited.
             </span>
           </div>
 
+          {/* Headline */}
           <h2
-            className="font-headline font-bold leading-tight mb-5 text-white"
-            style={{ fontSize: "clamp(2rem,4.5vw,3.25rem)" }}
+            className="font-headline font-bold leading-tight mb-5"
+            style={{ fontSize: "clamp(2rem,4.5vw,3.25rem)", color: "#002b38" }}
           >
-            Stop Guessing. Start Building.{" "}
-            <span style={{ color: "#e9c400" }}>Know Your Numbers Today.</span>
+            Stop Guessing.
+            <br />
+            <span style={{ color: "#e9c400" }}>Start Building.</span>
+            <br />
+            Know What You Can Build{" "}
+            <span style={{ color: "#e9c400" }}>Before You Spend Thousands.</span>
           </h2>
 
-          <p className="text-white/60 text-lg leading-relaxed mb-3 max-w-xl mx-auto">
-            Get complete, property-specific clarity in 24–48 hours — so you can move forward
+          {/* Subheadline */}
+          <p className="text-lg leading-relaxed mb-10 max-w-xl mx-auto" style={{ color: "#002b38" }}>
+            Get complete, property-specific clarity on your lot — so you can move forward
             without fear, without surprises, and without wasted money.
           </p>
-          <p className="text-white/35 text-sm mb-10">
-            Weekly on-site walkthrough slots are limited. Secure yours before they&apos;re gone.
-          </p>
 
-          {/* Dual CTA */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+          {/* CTA */}
+          <div className="flex justify-center mb-10">
             <CtaButton className="px-10 py-5 text-lg font-bold">
               Get My ADU Clarity Report — $495
             </CtaButton>
-            <CtaButton className="px-10 py-5 text-lg font-semibold">
-              Speak To An Expert First
-            </CtaButton>
           </div>
 
-          {/* Trust strip */}
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-white/30 text-xs mb-10">
+          {/* Trust badges */}
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs mb-10" style={{ color: "#002b38" }}>
             {[
-              { icon: "schedule", label: "24–48 Hour Delivery" },
               { icon: "verified", label: "100% Clarity Guarantee" },
               { icon: "picture_as_pdf", label: "Professional PDF" },
               { icon: "lock", label: "No Commitment Required" },
-            ].map(({ icon, label }) => (
+            ].map(({ icon, label }, i, arr) => (
               <div key={label} className="flex items-center gap-1.5">
-                <Icon name={icon} style={{ fontSize: "0.9rem", color: "rgba(233,196,0,0.5)" }} />
+                <Icon name={icon} style={{ fontSize: "0.9rem", color: "rgba(233,196,0,0.8)" }} />
                 <span>{label}</span>
+                {i < arr.length - 1 && (
+                  <span className="ml-6" style={{ color: "rgba(0,43,56,0.2)" }}>·</span>
+                )}
               </div>
             ))}
           </div>
 
-          {/* Guarantee reminder */}
+          {/* Guarantee reminder bar */}
           <div
             className="inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl"
             style={{
-              backgroundColor: "rgba(233,196,0,0.07)",
-              border: "1px solid rgba(233,196,0,0.2)",
+              backgroundColor: "rgba(233,196,0,0.15)",
+              border: "1px solid rgba(233,196,0,0.4)",
             }}
           >
             <Icon name="verified" style={{ color: "#e9c400", fontSize: "1.2rem" }} />
-            <span className="text-sm font-semibold" style={{ color: "rgba(255,255,255,0.55)" }}>
+            <span className="text-sm font-semibold" style={{ color: "#002b38" }}>
               100% Clarity Guarantee — We&apos;ll review again at no cost if you need more clarity.
             </span>
           </div>
@@ -1368,10 +954,8 @@ export default function PreFeasibilityPage() {
       <NavBar />
       <ProductHero />
       <TheProblem />
-      <StackedOffer />
       <Testimonials />
-      <ClarityGuarantee />
-      <FinalCTA />
+      <FinalClose />
       <Footer />
     </>
   );

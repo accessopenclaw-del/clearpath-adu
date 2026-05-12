@@ -496,15 +496,13 @@ function GuideSection() {
             </div>
             {/* Mobile headline */}
             <h2 className="font-headline font-bold text-white leading-tight text-4xl md:hidden">
-              From Feasibility To Finished ADU,
-              <br />
-              <span className="text-3xl" style={{ color: "#e9c400" }}>We Help Keep The Process Clear</span>
+              We Guide You From First Property Review To{" "}
+              <span style={{ color: "#e9c400" }}>Finished ADU</span>
             </h2>
             {/* Desktop headline */}
             <h2 className="font-headline font-bold text-white leading-tight hidden md:block md:text-[clamp(2.2rem,3.5vw,3.25rem)]">
-              From Feasibility To Finished ADU,
-              <br />
-              <span style={{ color: "#e9c400" }}>We Help Keep The Process Clear</span>
+              We Guide You From First Property Review To{" "}
+              <span style={{ color: "#e9c400" }}>Finished ADU</span>
             </h2>
           </FadeUp>
 
@@ -648,7 +646,7 @@ function KnowYourOptions() {
             <span style={{ color: "#e9c400" }}>Right For Your Property?</span>
           </h2>
           <p className="text-on-surface-variant text-lg leading-relaxed">
-            California law gives homeowners more options than most realize. Here&apos;s what might be possible on your lot.
+            California law gives homeowners more ADU options than most realize. The right choice depends on your lot, your goals, and your budget.
           </p>
         </FadeUp>
 
@@ -739,10 +737,6 @@ function KnowYourOptions() {
 function PreFeasibility() {
   const checkItems = [
     {
-      label: "ADU Proposal & Cost Breakdown",
-      detail: "ADU type, size, layout, and preliminary project cost range.",
-    },
-    {
       label: "Zoning & Property Review",
       detail: "Key zoning rules, setbacks, parking requirements, and local ADU constraints for your lot.",
     },
@@ -755,16 +749,20 @@ function PreFeasibility() {
       detail: "A visual concept showing where an ADU may fit and what areas need further review.",
     },
     {
+      label: "ADU Proposal & Cost Breakdown",
+      detail: "ADU type, size, layout, and preliminary project cost range.",
+    },
+    {
       label: "Estimated Timeline",
       detail: "From planning and permits through construction and final inspection.",
     },
     {
       label: "Utility & Trenching Red Flags",
-      detail: "Water, sewer, electrical, and trenching considerations affecting cost or feasibility.",
+      detail: "Utility considerations specific to your lot that could impact cost or feasibility.",
     },
     {
-      label: "Income & ROI Direction",
-      detail: "Potential rental income, property value impact, and whether the project is worth pursuing.",
+      label: "15-Minute Expert Review Call",
+      detail: "A California ADU specialist reviews your report with you and answers your questions.",
     },
     {
       label: "Next-Step Roadmap",
@@ -852,11 +850,11 @@ function PreFeasibility() {
                   <div className="w-12 h-[3px] rounded-full mb-10" style={{ backgroundColor: "#e9c400" }} />
 
                   {/* Why It Matters quote */}
-                  <div className="border-l-2 border-[#e9c400]/40 pl-5">
+                  <div className="mt-8 border-l-2 border-[#e9c400]/40 pl-5">
                     <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-3">
                       Why It Matters
                     </h4>
-                    <p className="text-white/55 text-sm leading-relaxed">
+                    <p className="text-sm md:text-lg leading-relaxed" style={{ color: "rgba(255,255,255,0.95)" }}>
                       &ldquo;Most homeowners start with ideas, rough quotes, or architect plans before they know what their property can actually support. Your Pre-Feasibility Report gives you a property-specific ADU roadmap &mdash; including zoning details, placement, budget direction, timeline, and next steps &mdash; so every dollar you spend moves you forward.&rdquo;
                     </p>
                   </div>
@@ -882,9 +880,10 @@ function PreFeasibility() {
               {/* Checklist — grows to fill available space */}
               <div className="flex-1">
                 <FadeUp>
-                  <h4 className="text-lg font-bold mb-8 text-on-background">
-                    What Your Report Includes
+                  <h4 className="text-lg font-bold mb-4 text-on-background">
+                    What&apos;s Inside Your <span style={{ color: "#e9c400" }}>Property-Specific</span> Report
                   </h4>
+                  <div className="mb-6 h-px" style={{ backgroundColor: "rgba(233,196,0,0.3)" }} />
                 </FadeUp>
                 <StaggerFadeUp>
                   <ul className="space-y-5">
@@ -908,7 +907,8 @@ function PreFeasibility() {
 
               {/* Framing note */}
               <FadeUp delay={0.2}>
-                <p className="mt-8 text-sm text-on-surface-variant leading-relaxed">
+                <div className="mt-8 mb-6 h-px" style={{ backgroundColor: "rgba(233,196,0,0.3)" }} />
+                <p className="text-sm text-on-surface-variant leading-relaxed">
                   This is designed to help you understand the opportunity before committing to full design, permits, financing, or construction.
                 </p>
               </FadeUp>
